@@ -5,3 +5,5 @@ group :development, :test do
   gem 'pry'
   gem 'guard-rspec', require: false
 end
+
+gem 'rake'

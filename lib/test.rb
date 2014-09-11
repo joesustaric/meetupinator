@@ -1,7 +1,7 @@
 class Test
 
   def hello
-    "Hello World"
+    "Hello World!"
   end
-  
+
 end
