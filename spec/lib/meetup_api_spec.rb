@@ -7,9 +7,6 @@ describe MeetupAPI do
 
     let(:group_id){ '9800072' }
     let(:group_url_name) { 'Ruby-On-Rails-Oceania-Melbourne' }
-    let(:response) {'{"results":[{"id":"9800072"}]}'}
-    let(:api_key) {'e176f7017712c636d307852216d828'}
-
 
     it 'returns the id of the meetup' do
       VCR.use_cassette('test') do

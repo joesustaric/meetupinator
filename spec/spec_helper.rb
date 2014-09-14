@@ -1,3 +1,3 @@
 require 'pry'
 require 'rspec'
-require 'webmock/rspec'
+#require 'webmock/rspec'
