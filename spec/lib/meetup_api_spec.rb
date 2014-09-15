@@ -14,6 +14,8 @@ describe MeetupAPI do
       end
     end
 
+    #missing API key
+
 
   end
 

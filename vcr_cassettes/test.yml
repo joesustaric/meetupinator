@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.meetup.com/groups?fields=&format=json&group_urlname=Ruby-On-Rails-Oceania-Melbourne&key=e176f7017712c636d307852216d828&offset=0&order=ctime&page=20&photo-host=public&radius=25.0
+    uri: http://api.meetup.com/groups?group_urlname=Ruby-On-Rails-Oceania-Melbourne&key=e176f7017712c636d307852216d828
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 14 Sep 2014 11:41:40 GMT
+      - Mon, 15 Sep 2014 12:28:39 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -29,24 +29,24 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d0a997f5c467f7dc581069b22a9a199981410694899594; expires=Mon, 23-Dec-2019
+      - __cfduid=d5a190918e59d332790f5a278175658d81410784118911; expires=Mon, 23-Dec-2019
         23:50:00 GMT; path=/; domain=.meetup.com; HttpOnly
       X-Meetup-Server:
       - api14.int.meetup.com
       X-Meetup-Request-Id:
-      - ae036332-8b85-43e6-9f20-c543571b4e7c
+      - 17195c86-d7a9-4163-9742-5599c9758c6a
       X-Oauth-Scopes:
       - basic
       X-Accepted-Oauth-Scopes:
       - basic
       Etag:
-      - W/"7127546e8e5c4658349a8907e34038c7"
+      - W/"b70bc57b5a416e4127608748eed9c5fe"
       Vary:
       - Accept-Encoding,User-Agent
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 169c51127ea20b14-SYD
+      - 16a4d34735260b14-SYD
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -55,8 +55,8 @@ http_interactions:
         TWVsYm91cm5lXC8iLCJzdGF0ZSI6IiIsIm9yZ2FuaXplcl9pZCI6Ijg0NjE5
         NDMyIiwiam9pbl9tb2RlIjoiMCIsImNpdHkiOiJNZWxib3VybmUiLCJ3aG8i
         OiJSdWJ5aXN0cyIsImlkIjoiOTgwMDA3MiIsImNyZWF0ZWQiOiJUdWUgQXVn
-        IDEzIDIxOjMzOjIzIEVEVCAyMDEzIiwidXBkYXRlZCI6IlN1biBTZXAgMTQg
-        MDc6MzU6MzMgRURUIDIwMTQiLCJkZXNjcmlwdGlvbiI6IlJ1Ynkgb24gUmFp
+        IDEzIDIxOjMzOjIzIEVEVCAyMDEzIiwidXBkYXRlZCI6Ik1vbiBTZXAgMTUg
+        MDg6MTg6MDggRURUIDIwMTQiLCJkZXNjcmlwdGlvbiI6IlJ1Ynkgb24gUmFp
         bHMgZGV2ZWxvcGVycyBhcmUgcGFzc2lvbmF0ZSBhYm91dCBkZXZlbG9waW5n
         IHNvbWUgb2YgdGhlIGJlc3QsIGluZHVzdHJ5IGxlYWRpbmcgd2ViIGFwcGxp
         Y2F0aW9ucyBvdXQgdGhlcmUuIMKgV2UgYXJlIGFsc28gcGFzc2lvbmF0ZSBh
@@ -101,11 +101,11 @@ http_interactions:
         aHR0cDpcL1wvYXBpLm1lZXR1cC5jb21cL2dyb3Vwcz9rZXk9ZTE3NmY3MDE3
         NzEyYzYzNmQzMDc4NTIyMTZkODI4JnJhZGl1cz0yNS4wJm9yZGVyPWN0aW1l
         Jmdyb3VwX3VybG5hbWU9UnVieS1Pbi1SYWlscy1PY2VhbmlhLU1lbGJvdXJu
-        ZSZwaG90by1ob3N0PXB1YmxpYyZvZmZzZXQ9MCZmb3JtYXQ9anNvbiZwYWdl
-        PTIwJmZpZWxkcz0iLCJpZCI6IiIsInRpdGxlIjoiTWVldHVwIEdyb3VwcyIs
-        InVwZGF0ZWQiOiJTdW4gU2VwIDE0IDA3OjM1OjMzIEVEVCAyMDE0IiwiZGVz
-        Y3JpcHRpb24iOiJBUEkgbWV0aG9kIGZvciBhY2Nlc3NpbmcgbWVldHVwIGdy
-        b3VwcyIsIm1ldGhvZCI6Ikdyb3VwcyIsImxhdCI6IiJ9fQo=
-    http_version:
-  recorded_at: Sun, 14 Sep 2014 11:41:40 GMT
+        ZSZvZmZzZXQ9MCZmb3JtYXQ9anNvbiZwYWdlPTIwMCZmaWVsZHM9IiwiaWQi
+        OiIiLCJ0aXRsZSI6Ik1lZXR1cCBHcm91cHMiLCJ1cGRhdGVkIjoiTW9uIFNl
+        cCAxNSAwODoxODowOCBFRFQgMjAxNCIsImRlc2NyaXB0aW9uIjoiQVBJIG1l
+        dGhvZCBmb3IgYWNjZXNzaW5nIG1lZXR1cCBncm91cHMiLCJtZXRob2QiOiJH
+        cm91cHMiLCJsYXQiOiIifX0K
+    http_version: 
+  recorded_at: Mon, 15 Sep 2014 12:28:39 GMT
 recorded_with: VCR 2.9.3
