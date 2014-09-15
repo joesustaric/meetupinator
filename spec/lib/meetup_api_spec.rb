@@ -9,7 +9,7 @@ describe MeetupAPI do
     let(:group_url_name) { 'Ruby-On-Rails-Oceania-Melbourne' }
 
     it 'returns the id of the meetup' do
-      VCR.use_cassette('test') do
+      VCR.use_cassette('groups') do
         expect(subject.get_meetup_id(group_url_name)).to eq(group_id)
       end
     end

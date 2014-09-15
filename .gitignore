@@ -35,4 +35,4 @@ build/
 .rvmrc
 
 #vcr files which may include API keys .. ignore them
-/vcr_cassettes/
+/spec/vcr_cassettes/*.yml
