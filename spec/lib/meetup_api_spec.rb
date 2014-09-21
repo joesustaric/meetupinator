@@ -8,15 +8,14 @@ describe MeetupAPI do
     let(:group_id){ '9800072' }
     let(:group_url_name) { 'Ruby-On-Rails-Oceania-Melbourne' }
 
-    it 'returns the id of the meetup' do
-      VCR.use_cassette('groups') do
-        expect(subject.get_meetup_id(group_url_name)).to eq(group_id)
+    describe 'getting the meetup id'
+
+      it 'returns the id of the meetup' do
+        VCR.use_cassette('groups') do
+          expect(subject.get_meetup_id(group_url_name)).to eq(group_id)
+        end
       end
+
     end
-
-    #missing API key
-
-
-  end
 
 end
