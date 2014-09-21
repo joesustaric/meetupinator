@@ -1,3 +1,4 @@
+require 'csv'
 
 class MeetupFile
 
@@ -6,12 +7,17 @@ class MeetupFile
   end
 
   def get_meetup_names_without_ids
-
     result = []
     CSV.foreach(@file, { :headers => true }) do |row|
-      result << row.to_a unless !row['group_id'].nil?
+      result << row.to_hash unless group_id_populated? row
     end
     result
+  end
+
+  private
+
+  def group_id_populated? row
+    !row['group_id'].nil?
   end
 
 end

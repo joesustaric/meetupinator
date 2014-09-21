@@ -21,8 +21,8 @@ class MeetupAPI
     JSON.parse Net::HTTP.get uri
   end
 
-  def extract_meetup_id response
-    response['results'][0]['id']
+  def extract_meetup_id group_response
+    group_response['results'][0]['id']
   end
 
 end
