@@ -4,7 +4,7 @@ require 'csv'
 
 describe MeetupFile do
 
-  describe '#get_meetup_names_without_ids' do
+  describe '#get_meetups_missing_ids' do
     include FakeFS::SpecHelpers::All
 
     let(:file_headers) { ['group_urlname', 'group_id'] }
@@ -25,7 +25,7 @@ describe MeetupFile do
     end
 
     it 'returns an array of meetup names without ids' do
-      expect(subject.get_meetup_names_without_ids).to eq(meetups_without_ids)
+      expect(subject.get_meetups_missing_ids).to eq(meetups_without_ids)
     end
 
   end

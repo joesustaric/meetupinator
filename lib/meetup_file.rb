@@ -6,7 +6,7 @@ class MeetupFile
     @file = 'files/meetups.csv'
   end
 
-  def get_meetup_names_without_ids
+  def get_meetups_missing_ids
     result = []
     CSV.foreach(@file, { :headers => true }) do |row|
       result << row.to_hash unless group_id_populated? row
