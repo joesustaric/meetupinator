@@ -7,7 +7,7 @@ class MeetupAPI
   def initialize
     @base_uri = 'api.meetup.com'
     @groups_endpoint = '/groups'
-    @api_key = ENV['MEETUP_API_KEY']
+    @api_key = ENV['MEETUP_API_KEY'] || raise('no MEETUP_API_KEY provided')
   end
 
   def get_meetup_id group_url_name
