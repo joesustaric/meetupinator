@@ -1,13 +1,12 @@
 require 'csv'
 
 class MeetupFile
+  attr_reader :file_content
 
   def initialize
     @file_location = 'files/meetups.csv'
     @file_content = []
-    CSV.foreach(@file_location, { :headers => true }) do |row|
-      @file_content << row.to_hash unless group_id_populated? row
-    end
+    load_file
   end
 
   def get_meetups_missing_ids
@@ -19,7 +18,6 @@ class MeetupFile
   end
 
   def update_file new_content
-
     @file_content.each do |old_row|
       new_content.each do |new_row|
         if group_match? old_row, new_row
@@ -42,6 +40,12 @@ class MeetupFile
       @file_content.each do |row|
         csv << row
       end
+    end
+  end
+
+  def load_file
+    CSV.foreach(@file_location, { :headers => true }) do |row|
+      @file_content << row.to_hash
     end
   end
 

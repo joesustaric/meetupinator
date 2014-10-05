@@ -17,6 +17,17 @@ describe MeetupFile do
     end
   end
 
+  describe '#new' do
+    let(:expected_initial_content) {[{"group_urlname"=>"a", "group_id"=>nil}, {"group_urlname"=>"b", "group_id"=>"123"}, {"group_urlname"=>"c", "group_id"=>nil}]}
+    before do
+      create_test_meetup_file file_path, file_data
+    end
+
+    it 'loads all the file data' do
+      expect(subject.file_content).to eq(expected_initial_content)
+    end
+  end
+
   describe '#get_meetups_missing_ids' do
 
     let(:meetups_without_ids) { [{"group_urlname"=>"a", "group_id"=>nil}, {"group_urlname"=>"c", "group_id"=>nil}] }
