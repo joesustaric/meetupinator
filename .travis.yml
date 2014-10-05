@@ -1,0 +1,5 @@
+language: ruby
+rvm:
+  - "2.1"
+env:
+  - MEETUP_API_KEY="1234"

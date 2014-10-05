@@ -1,0 +1,112 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.meetup.com/2/groups?group_urlname=Ruby-On-Rails-Oceania-Melbourne&key=1234
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.meetup.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 05 Oct 2014 10:43:23 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d837be09277393de46130b6c4a91dba511412505802870; expires=Mon, 23-Dec-2019
+        23:50:00 GMT; path=/; domain=.meetup.com; HttpOnly
+      X-Meetup-Server:
+      - api2.int.meetup.com
+      X-Meetup-Request-Id:
+      - 1b119062-c8ff-42a4-931b-fc49691afc1f
+      X-Oauth-Scopes:
+      - basic
+      X-Accepted-Oauth-Scopes:
+      - basic
+      Etag:
+      - W/"d75cf1cfb072923dfd01a7075531c933"
+      Vary:
+      - Accept-Encoding,User-Agent
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 17490493f9f30b14-SYD
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyZXN1bHRzIjpbeyJsb24iOjE0NC45NjAwMDY3MTM4NjcyLCJ2aXNpYmls
+        aXR5IjoicHVibGljIiwib3JnYW5pemVyIjp7Im5hbWUiOiJNaWtlbCBMaW5k
+        c2FhciIsIm1lbWJlcl9pZCI6ODQ2MTk0MzJ9LCJsaW5rIjoiaHR0cDpcL1wv
+        d3d3Lm1lZXR1cC5jb21cL1J1YnktT24tUmFpbHMtT2NlYW5pYS1NZWxib3Vy
+        bmVcLyIsImpvaW5fbW9kZSI6Im9wZW4iLCJ3aG8iOiJSdWJ5aXN0cyIsImNv
+        dW50cnkiOiJBVSIsImNpdHkiOiJNZWxib3VybmUiLCJpZCI6OTgwMDA3Miwi
+        Y2F0ZWdvcnkiOnsiaWQiOjM0LCJuYW1lIjoidGVjaCIsInNob3J0bmFtZSI6
+        InRlY2gifSwidG9waWNzIjpbeyJpZCI6NTYzLCJ1cmxrZXkiOiJvcGVuc291
+        cmNlIiwibmFtZSI6Ik9wZW4gU291cmNlIn0seyJpZCI6NjU5LCJ1cmxrZXki
+        OiJ3ZWJkZXNpZ24iLCJuYW1lIjoiV2ViIERlc2lnbiJ9LHsiaWQiOjEwNDAs
+        InVybGtleSI6InJ1YnkiLCJuYW1lIjoiUnVieSJ9LHsiaWQiOjE5NzMsInVy
+        bGtleSI6ImNzcyIsIm5hbWUiOiJDU1MifSx7ImlkIjozODMzLCJ1cmxrZXki
+        OiJzb2Z0d2FyZWRldiIsIm5hbWUiOiJTb2Z0d2FyZSBEZXZlbG9wbWVudCJ9
+        LHsiaWQiOjcwMjksInVybGtleSI6ImphdmFzY3JpcHQiLCJuYW1lIjoiSmF2
+        YVNjcmlwdCJ9LHsiaWQiOjE1NTgyLCJ1cmxrZXkiOiJ3ZWItZGV2ZWxvcG1l
+        bnQiLCJuYW1lIjoiV2ViIERldmVsb3BtZW50In0seyJpZCI6MTYxMzcsInVy
+        bGtleSI6ImpxdWVyeSIsIm5hbWUiOiJKUXVlcnkifSx7ImlkIjoxNzYyNywi
+        dXJsa2V5IjoicHJvZ3JhbW1pbmciLCJuYW1lIjoiUHJvZ3JhbW1pbmcifSx7
+        ImlkIjoyMDgzNywidXJsa2V5IjoicnVieS1vbi1yYWlscyIsIm5hbWUiOiJS
+        dWJ5IE9uIFJhaWxzIn0seyJpZCI6Mzg2NTUsInVybGtleSI6Imluc3RhbGxp
+        bmctcnVieS1vbi1yYWlscyIsIm5hbWUiOiJJbnN0YWxsaW5nIFJ1YnkgT24g
+        UmFpbHMifSx7ImlkIjo3ODU2NSwidXJsa2V5IjoiaHRtbDUiLCJuYW1lIjoi
+        SFRNTDUifSx7ImlkIjo5NTgyMywidXJsa2V5IjoicnVieS1vbi1yYWlscy0z
+        IiwibmFtZSI6IlJ1Ynkgb24gUmFpbHMgMyJ9LHsiaWQiOjEwMDQ3OSwidXJs
+        a2V5IjoiZnJvbnQtZW5kLWRldmVsb3BtZW50IiwibmFtZSI6IkZyb250LWVu
+        ZCBEZXZlbG9wbWVudCJ9XSwidGltZXpvbmUiOiJBdXN0cmFsaWFcL01lbGJv
+        dXJuZSIsImdyb3VwX3Bob3RvIjp7InBob3RvX2xpbmsiOiJodHRwOlwvXC9w
+        aG90b3MyLm1lZXR1cHN0YXRpYy5jb21cL3Bob3Rvc1wvZXZlbnRcLzJcL2Nc
+        LzNcL2FcLzYwMF8yNzE0NTEzMjIuanBlZyIsImhpZ2hyZXNfbGluayI6Imh0
+        dHA6XC9cL3Bob3RvczQubWVldHVwc3RhdGljLmNvbVwvcGhvdG9zXC9ldmVu
+        dFwvMlwvY1wvM1wvYVwvaGlnaHJlc18yNzE0NTEzMjIuanBlZyIsInRodW1i
+        X2xpbmsiOiJodHRwOlwvXC9waG90b3M0Lm1lZXR1cHN0YXRpYy5jb21cL3Bo
+        b3Rvc1wvZXZlbnRcLzJcL2NcLzNcL2FcL3RodW1iXzI3MTQ1MTMyMi5qcGVn
+        IiwicGhvdG9faWQiOjI3MTQ1MTMyMn0sImNyZWF0ZWQiOjEzNzY0NDQwMDMw
+        MDAsImRlc2NyaXB0aW9uIjoiPHA+UnVieSBvbiBSYWlscyBkZXZlbG9wZXJz
+        IGFyZSBwYXNzaW9uYXRlIGFib3V0IGRldmVsb3Bpbmcgc29tZSBvZiB0aGUg
+        YmVzdCwgaW5kdXN0cnkgbGVhZGluZyB3ZWIgYXBwbGljYXRpb25zIG91dCB0
+        aGVyZS4gwqBXZSBhcmUgYWxzbyBwYXNzaW9uYXRlIGFib3V0IG91ciBjb21t
+        dW5pdHkgYW5kIHdlbGNvbWluZyBuZXcgbWVtYmVycyBpbnRvIG91ciBmdW4g
+        ZXhwYW5kaW5nIGdyb3VwLjxcL3A+XG48cD5XZSBob2xkIG1vbnRobHkgbWVl
+        dHVwcyBpbiBNZWxib3VybmUsIHVzdWFsbHkgYXQgdGhlIGF3ZXNvbWUgSW5z
+        cGlyZTkgc3BhY2UsIHdoZXJlIHdlIGdpdmUgdGFsa3PCoGFuZCBkaXNjdXNz
+        IHRvcGljcyBhYm91dCBSdWJ5IG9uIFJhaWxzLCBzb2Z0d2FyZSBkZXZlbG9w
+        bWVudCBhbmQganVzdCBhIGZyaWVuZGx5IGNoYXQgd2l0aCBtYXRlcy48XC9w
+        PlxuPHA+wqA8XC9wPiIsIm5hbWUiOiJSdWJ5IGFuZCBSYWlscyBNZWxib3Vy
+        bmUiLCJyYXRpbmciOjQuNzYsInVybG5hbWUiOiJSdWJ5LU9uLVJhaWxzLU9j
+        ZWFuaWEtTWVsYm91cm5lIiwibGF0IjotMzcuODEwMDAxMzczMjkxMDE2LCJt
+        ZW1iZXJzIjo3NTN9XSwibWV0YSI6eyJsb24iOiIiLCJjb3VudCI6MSwibGlu
+        ayI6Imh0dHA6XC9cL2FwaS5tZWV0dXAuY29tXC8yXC9ncm91cHMiLCJuZXh0
+        IjoiIiwidG90YWxfY291bnQiOjEsInVybCI6Imh0dHA6XC9cL2FwaS5tZWV0
+        dXAuY29tXC8yXC9ncm91cHM/a2V5PWUxNzZmNzAxNzcxMmM2MzZkMzA3ODUy
+        MjE2ZDgyOCZyYWRpdXM9MjUuMCZvcmRlcj1pZCZncm91cF91cmxuYW1lPVJ1
+        YnktT24tUmFpbHMtT2NlYW5pYS1NZWxib3VybmUmZGVzYz1mYWxzZSZvZmZz
+        ZXQ9MCZmb3JtYXQ9anNvbiZwYWdlPTIwMCZmaWVsZHM9IiwiaWQiOiIiLCJ0
+        aXRsZSI6Ik1lZXR1cCBHcm91cHMgdjIiLCJ1cGRhdGVkIjoxNDEyMzE0MzM3
+        MDAwLCJkZXNjcmlwdGlvbiI6IiIsIm1ldGhvZCI6Ikdyb3VwcyIsImxhdCI6
+        IiJ9fQo=
+    http_version:
+  recorded_at: Sun, 05 Oct 2014 10:43:23 GMT
+recorded_with: VCR 2.9.3
