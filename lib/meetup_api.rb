@@ -1,7 +1,6 @@
 require 'net/http'
 require 'json'
 
-
 class MeetupAPI
 
   def initialize
