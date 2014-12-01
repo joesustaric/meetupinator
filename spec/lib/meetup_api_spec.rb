@@ -7,12 +7,15 @@ describe MeetupAPI do
   let(:group_url_name) { 'Ruby-On-Rails-Oceania-Melbourne' }
 
   describe '#new' do
-    before do
-      stub_const('ENV', {'MEETUP_API_KEY' => nil})
-    end
+    context 'when there is no MEETUP api key in the environment' do
 
-    it 'raises a no api key error' do
-      expect { subject }.to raise_exception
+      before do
+        stub_const('ENV', {'MEETUP_API_KEY' => nil})
+      end
+
+      it 'raises a no api key error' do
+        expect { subject }.to raise_exception
+      end
     end
 
   end
@@ -41,8 +44,9 @@ describe MeetupAPI do
             expect(subject.get_upcoming_events(group_url_name).size).to eq(expected_number_of_events)
           end
         end
-        
+
       end
     end
+  
 
 end
