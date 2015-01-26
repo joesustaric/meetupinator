@@ -7,8 +7,8 @@ RSpec.configure do |config|
   config.color = true
 
   # Use color not only in STDOUT but also in pagers and files
-   config.tty = true
+  config.tty = true
 
   # Use the specified formatter
-   config.formatter = :documentation # :progress, :html, :textmate
+  config.formatter = :documentation # :progress, :html, :textmate
 end
