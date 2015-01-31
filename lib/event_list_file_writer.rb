@@ -4,10 +4,8 @@ class EventListFileWriter
       csv << ["Group name", "Event name", "Day of week", "Date", "Start time", "End time"]
 
       events.each do |event|
-        # FIXME We ignore the 'utc_offset' attribute and instead just get the time in the local time zone
-        # ('time' is given in milliseconds since the epoch in UTC)
-        start_time = Time.at(event['time'] / 1000)
-        end_time = start_time + event['duration'] / 1000
+        start_time = time_with_offset(event['time'], event['utc_offset'])
+        end_time = start_time + ms_to_seconds(event['duration'])
 
         csv << [
             event['group']['name'],
@@ -19,5 +17,15 @@ class EventListFileWriter
         ]
       end
     end
+  end
+
+  private
+
+  def time_with_offset time, offset
+    Time.at(ms_to_seconds(time)).getlocal(ms_to_seconds(offset))
+  end
+
+  def ms_to_seconds ms
+    ms / 1000
   end
 end
