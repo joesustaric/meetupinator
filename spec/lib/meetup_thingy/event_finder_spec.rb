@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'event_finder'
+require 'meetup_thingy/event_finder'
 
-describe EventFinder do
+describe MeetupThingy::EventFinder do
 
   describe '#get_events_for_meetups' do
     let (:meetups) {

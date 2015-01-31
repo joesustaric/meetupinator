@@ -1,8 +1,8 @@
 require 'fakefs/spec_helpers'
-require 'meetup_file'
+require 'meetup_thingy/meetup_file'
 require 'csv'
 
-describe MeetupFile do
+describe MeetupThingy::MeetupFile do
   include FakeFS::SpecHelpers::All
 
   let(:file_data) { [['a',nil],['b','123'],['c',nil]] }

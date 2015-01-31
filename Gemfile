@@ -7,6 +7,7 @@ group :development, :test do
   gem 'webmock'
   gem 'fakefs'
   gem 'vcr'
+  gem 'thor'
 end
 
 gem 'rake'

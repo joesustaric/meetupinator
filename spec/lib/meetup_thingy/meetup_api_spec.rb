@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'vcr_setup'
-require 'meetup_api'
+require 'meetup_thingy/meetup_api'
 
-describe MeetupAPI do
+describe MeetupThingy::MeetupAPI do
 
   let(:group_id) { 9800072 }
 

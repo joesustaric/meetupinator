@@ -66,5 +66,6 @@ DEPENDENCIES
   pry
   rake
   rspec
+  thor
   vcr
   webmock
