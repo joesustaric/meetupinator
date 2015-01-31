@@ -11,12 +11,12 @@ class MeetupAPI
   end
 
   def get_meetup_id group_url_name
-    uri = URI::HTTP.build(:host => @base_uri, :path => @groups_endpoint, :query=> 'key=' + @api_key + '&group_urlname=' + group_url_name)
+    uri = URI::HTTP.build(:host => @base_uri, :path => @groups_endpoint, :query => 'key=' + @api_key + '&group_urlname=' + group_url_name)
     extract_meetup_id get_meetup_response(uri)
   end
 
-  def get_upcoming_events group_url_name
-    uri = URI::HTTP.build(:host => @base_uri, :path => @events_endpoint, :query=> 'sign=true&photo-host=public&status=upcoming&key=' + @api_key + '&group_urlname=' + group_url_name)
+  def get_upcoming_events group_ids
+    uri = URI::HTTP.build(:host => @base_uri, :path => @events_endpoint, :query => 'sign=true&photo-host=public&status=upcoming&key=' + @api_key + '&group_id=' + group_ids.join(','))
     response = get_meetup_response uri
     get_results response
   end
