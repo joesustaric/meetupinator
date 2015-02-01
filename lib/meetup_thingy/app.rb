@@ -41,10 +41,10 @@ module MeetupThingy
 
     # FIXME: This is a horribly gross attempt at dependency injection
     def init
-      @groups ||= MeetupThingy::InputFileReader.group_names options[:input]
-      @event_finder ||= MeetupThingy::EventFinder.new
+      @groups = MeetupThingy::InputFileReader.group_names options[:input]
+      @event_finder = MeetupThingy::EventFinder.new
       @event_list_file_writer ||= MeetupThingy::EventListFileWriter.new
-      @api ||= MeetupThingy::MeetupAPI.new(options[:meetup_api_key])
+      @api = MeetupThingy::MeetupAPI.new(options[:meetup_api_key])
     end
   end
 end
