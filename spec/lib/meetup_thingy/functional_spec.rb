@@ -54,6 +54,7 @@ describe 'meetup_thingy' do
   before do
     clean_up input_file
     clean_up output_file
+    create_input_file
   end
 
   after do
@@ -61,23 +62,35 @@ describe 'meetup_thingy' do
     clean_up output_file
   end
 
-  it 'should fetch and save events for all meetups' do
-    VCR.use_cassette('getevents_functional_test') do
-      group_names = ['MelbNodeJS', 'Ruby-On-Rails-Oceania-Melbourne']
+  context 'when given minimal correct arguments' do
+    it 'will fetch and save events for all meetups' do
+      VCR.use_cassette('getevents_functional_test') do
+        args = ['getevents', '-i', input_file, '-o', output_file, '-k', '1234']
 
-      File.open(input_file, 'wb') do |file|
-        group_names.each { |name| file.print(name + "\n") }
+        MeetupThingy::App.start(args)
+
+        File.open output_file do |body|
+          csv = CSV.new(body, headers: true, header_converters: :symbol, converters: :all)
+          actual_csv_output = csv.to_a.map(&:to_hash)
+          expect(actual_csv_output).to eq(expected_csv_output)
+        end
       end
+    end
+  end
 
-      args = ['getevents', '-i', input_file, '-o', output_file, '-k', '1234']
+  context 'when given the --version argument' do
+    before { stub_const('MeetupThingy::VERSION', '9.23') }
 
-      expect { MeetupThingy::App.start(args) }.to match_stdout('')
+    it 'returns the version' do
+      args = ['--version']
+      expect { MeetupThingy::App.start(args) }.to match_stdout('meetup_thingy v9.23')
+    end
+  end
 
-      File.open output_file do |body|
-        csv = CSV.new(body, headers: true, header_converters: :symbol, converters: :all)
-        actual_csv_output = csv.to_a.map(&:to_hash)
-        expect(actual_csv_output).to eq(expected_csv_output)
-      end
+  def create_input_file
+    group_names = ['MelbNodeJS', 'Ruby-On-Rails-Oceania-Melbourne']
+    File.open(input_file, 'wb') do |file|
+      group_names.each { |name| file << name + "\n" }
     end
   end
 end

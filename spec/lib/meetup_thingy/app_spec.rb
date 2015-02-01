@@ -6,6 +6,8 @@ describe MeetupThingy::App do
   include FakeFS::SpecHelpers::All
 
   let(:file_writer) { instance_double(MeetupThingy::EventListFileWriter) }
+  let(:input_file) { 'input.txt' }
+  let(:output_file) { 'output.csv' }
 
   describe '#version' do
     it { expect { subject.version }.to match_stdout('meetup_thingy v0.1') }
@@ -13,15 +15,12 @@ describe MeetupThingy::App do
 
   describe '#extract_events' do
     it 'gets all upcoming events for the given groups and saves them to file' do
-      input_file = 'input.txt'
       group_names = ['First meetup group', 'Second meetup group']
       events = [:first_event, :second_event]
 
       File.open(input_file, 'wb') do |file|
-        group_names.each { |name| file.print(name + "\n") }
+        group_names.each { |name| file << name + "\n" }
       end
-
-      output_file = 'output.csv'
 
       subject.options = {
         input: input_file,

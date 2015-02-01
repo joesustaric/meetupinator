@@ -20,6 +20,7 @@ module MeetupThingy
 
     option :input, aliases: '-i', required: true, type: :string
     option :output, aliases: '-o', required: true, type: :string
+    option :version, aliases: '-v', required: false, type: :string
 
     def extract_events
       output_file = options[:output]
