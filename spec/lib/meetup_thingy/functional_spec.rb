@@ -81,6 +81,15 @@ describe 'meetup_thingy' do
     end
   end
 
+  context 'when given the -v argument' do
+    before { stub_const('MeetupThingy::VERSION', '9.23') }
+
+    it 'returns the version' do
+      args = ['-v']
+      expect { MeetupThingy::App.start(args) }.to match_stdout('meetup_thingy v9.23')
+    end
+  end
+
   def create_input_file
     group_names = ['MelbNodeJS', 'Ruby-On-Rails-Oceania-Melbourne']
     File.open(input_file, 'wb') do |file|

@@ -32,6 +32,7 @@ module MeetupThingy
 
     desc '--version', 'Print version and exit'
     map '--version' => 'version'
+    map '-v' => 'version'
     def version
       puts 'meetup_thingy v' + MeetupThingy::VERSION
     end

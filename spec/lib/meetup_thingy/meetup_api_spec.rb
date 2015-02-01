@@ -10,7 +10,7 @@ describe MeetupThingy::MeetupAPI do
       before { ENV['MEETUP_API_KEY'] = nil }
 
       it 'raises a no API key error if no API key is explicitly given' do
-        expect { subject }.to raise_exception
+        expect { subject }.to raise_exception('no MEETUP_API_KEY provided')
       end
 
       it 'uses the API key given in the constructor' do
