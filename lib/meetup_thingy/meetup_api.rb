@@ -37,13 +37,11 @@ module MeetupThingy
 
     def get_meetup_response(uri)
       response = Net::HTTP.get_response uri
-
       if response.code != '200'
         msg = "Call to #{uri} failed: #{response.code} - #{response.message}"
         msg << '. ' + response.body if response.class.body_permitted?
         fail(msg)
       end
-
       JSON.parse response.body
     end
 

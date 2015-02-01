@@ -27,6 +27,7 @@ module MeetupThingy
       init
       events = @event_finder.extract_events @groups, @api
       @event_list_file_writer.write events, output_file
+      puts "Output written to #{output_file}"
     end
 
     desc '--version', 'Print version and exit'

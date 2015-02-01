@@ -66,14 +66,8 @@ describe 'meetup_thingy' do
     it 'will fetch and save events for all meetups' do
       VCR.use_cassette('getevents_functional_test') do
         args = ['getevents', '-i', input_file, '-o', output_file, '-k', '1234']
-
-        MeetupThingy::App.start(args)
-
-        File.open output_file do |body|
-          csv = CSV.new(body, headers: true, header_converters: :symbol, converters: :all)
-          actual_csv_output = csv.to_a.map(&:to_hash)
-          expect(actual_csv_output).to eq(expected_csv_output)
-        end
+        expect { MeetupThingy::App.start(args) }.to match_stdout("Output written to #{output_file}")
+        expect(read_output_file).to eq(expected_csv_output)
       end
     end
   end
@@ -92,5 +86,14 @@ describe 'meetup_thingy' do
     File.open(input_file, 'wb') do |file|
       group_names.each { |name| file << name + "\n" }
     end
+  end
+
+  def read_output_file
+    actual_csv_output = nil
+    File.open output_file do |body|
+      csv = CSV.new(body, headers: true, header_converters: :symbol, converters: :all)
+      actual_csv_output = csv.to_a.map(&:to_hash)
+    end
+    actual_csv_output
   end
 end

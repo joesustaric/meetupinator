@@ -33,7 +33,7 @@ describe MeetupThingy::App do
 
       expect(subject.event_finder).to receive(:extract_events).with(group_names, subject.api) { events }
       expect(subject.event_list_file_writer).to receive(:write).with(events, output_file)
-      expect { subject.extract_events }.to match_stdout('')
+      subject.extract_events
     end
   end
 end
