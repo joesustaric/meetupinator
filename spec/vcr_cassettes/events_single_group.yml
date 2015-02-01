@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.meetup.com/2/events?group_urlname=Ruby-On-Rails-Oceania-Melbourne&key=1234&photo-host=public&sign=true&status=upcoming
+    uri: http://api.meetup.com/2/events?group_id=9800072&key=1234&photo-host=public&sign=true&status=upcoming
     body:
       encoding: US-ASCII
       string: ''
