@@ -17,7 +17,7 @@ module MeetupThingy
 
     desc 'getevents', 'Write all upcoming events for the given meetup
                        groups specified in INPUT to OUTPUT'
-    map 'getevents' => 'get_events'
+    map 'getevents' => 'extract_events'
     option :input, aliases: '-i', required: true, type: :string
     option :output, aliases: '-o', required: true, type: :string
     def extract_events
