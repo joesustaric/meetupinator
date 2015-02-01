@@ -16,11 +16,12 @@ describe MeetupThingy::App do
     allow(MeetupThingy::EventFinder).to receive(:new).and_return(event_finder)
     allow(MeetupThingy::MeetupAPI).to receive(:new).and_return(meetup_api)
     allow(MeetupThingy::EventListFileWriter).to receive(:new).and_return(file_writer)
+    stub_const('MeetupThingy::VERSION', '9.123')
     write_input_file
   end
 
   describe '#version' do
-    it { expect { subject.version }.to match_stdout('meetup_thingy v0.1') }
+    it { expect { subject.version }.to match_stdout('meetup_thingy v9.123') }
   end
 
   describe '#extract_events' do
