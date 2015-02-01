@@ -2,7 +2,8 @@ require 'net/http'
 require 'json'
 
 module MeetupThingy
-  # class def
+  # This class is responsible for communicating with the meetup.com API
+  # and returning the json responses only.
   class MeetupAPI
     attr_reader :api_key
 

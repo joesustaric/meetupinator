@@ -1,3 +1,5 @@
+require 'csv'
+
 module MeetupThingy
   # class def
   class EventListFileWriter
