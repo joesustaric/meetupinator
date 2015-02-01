@@ -37,3 +37,4 @@ build/
 # Ignore IntelliJ files
 *.iml
 .idea
+files/output.csv

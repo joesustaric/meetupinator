@@ -12,4 +12,8 @@ RSpec.configure do |config|
 
   # Use the specified formatter
   config.formatter = :documentation # :progress, :html, :textmate
+
+  config.mock_with :rspec do |mocks|
+    mocks.verify_doubled_constant_names = true
+  end
 end

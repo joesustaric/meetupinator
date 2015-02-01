@@ -3,12 +3,13 @@ require 'json'
 
 module MeetupThingy
   class MeetupAPI
+    attr_reader :api_key
 
-    def initialize
+    def initialize(api_key = nil)
       @base_uri = 'api.meetup.com'
       @groups_endpoint = '/2/groups'
       @events_endpoint = '/2/events'
-      @api_key = ENV['MEETUP_API_KEY'] || raise('no MEETUP_API_KEY provided')
+      @api_key = api_key || ENV['MEETUP_API_KEY'] || raise('no MEETUP_API_KEY provided')
     end
 
     def get_meetup_id group_url_name
@@ -25,7 +26,19 @@ module MeetupThingy
     private
 
     def get_meetup_response uri
-      JSON.parse Net::HTTP.get uri
+      response = Net::HTTP.get_response uri
+
+      if response.code != "200"
+        msg = "Call to #{uri} failed: HTTP #{response.code} - #{response.message}"
+
+        if response.class.body_permitted?
+          msg << '. ' + response.body
+        end
+
+        raise(msg)
+      end
+
+      JSON.parse response.body
     end
 
     def extract_meetup_id response

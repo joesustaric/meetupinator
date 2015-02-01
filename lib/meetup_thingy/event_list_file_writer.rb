@@ -6,13 +6,18 @@ module MeetupThingy
 
         events.each do |event|
           start_time = time_with_offset(event['time'], event['utc_offset'])
-          end_time = start_time + ms_to_seconds(event['duration'])
+
+          # According to http://www.meetup.com/meetup_api/docs/2/events/, if no duration is specified,
+          # we can assume 3 hours.
+          # TODO We should probably display a warning when this happens.
+          duration = event['duration'] || 3*60*60*1000
+          end_time = start_time + ms_to_seconds(duration)
 
           csv << [
               event['group']['name'],
               event['name'],
               start_time.strftime('%A'),
-              start_time.strftime('%e/%m/%Y'),
+              start_time.strftime('%-e/%m/%Y'),
               start_time.strftime('%-l:%M %p'),
               end_time.strftime('%-l:%M %p')
           ]

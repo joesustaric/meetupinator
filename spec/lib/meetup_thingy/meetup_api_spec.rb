@@ -7,17 +7,40 @@ describe MeetupThingy::MeetupAPI do
   let(:group_id) { 9800072 }
 
   describe '#new' do
-    context 'when there is no MEETUP api key in the environment' do
+    context 'when there is no Meetup API key in the environment' do
 
       before do
         stub_const('ENV', {'MEETUP_API_KEY' => nil})
       end
 
-      it 'raises a no api key error' do
+      it 'raises a no API key error if no API key is explicitly given' do
         expect { subject }.to raise_exception
+      end
+
+      it 'uses the API key given in the constructor' do
+        key = 'My super-secret API key'
+        subject = MeetupThingy::MeetupAPI.new key
+        expect(subject.api_key).to eq(key)
       end
     end
 
+    context 'when there is a Meetup API key in the environment' do
+      let (:env_api_key) { 'API key from environment' }
+
+      before do
+        stub_const('ENV', {'MEETUP_API_KEY' => env_api_key})
+      end
+
+      it 'uses the API given in the environment if no API key is explicitly given' do
+        expect(subject.api_key).to eq(env_api_key)
+      end
+
+      it 'uses the API key given in the constructor if one is given' do
+        key = 'My super-secret API key'
+        subject = MeetupThingy::MeetupAPI.new key
+        expect(subject.api_key).to eq(key)
+      end
+    end
   end
 
   describe '#get_meetup_id' do
