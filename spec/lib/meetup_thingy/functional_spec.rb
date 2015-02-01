@@ -1,0 +1,83 @@
+require 'vcr_setup'
+require 'spec_helper'
+require 'meetup_thingy/app'
+
+describe 'meetup_thingy' do
+  # In an ideal world, we'd use FakeFS here.
+  # Unfortunately, FakeFS and VCR don't coexist very well.
+  # Something like the solution proposed in https://github.com/vcr/vcr/issues/234 could work,
+  # but for the time being we can just use temp files instead.
+  let(:input_file) { Dir::Tmpname.make_tmpname(['input', '.txt'], nil) }
+  let(:output_file) { Dir::Tmpname.make_tmpname(['output', '.csv'], nil) }
+
+  let(:expected_csv_output) do
+    [
+      {
+        group_name: 'The Melbourne Node.JS Meetup Group',
+        event_name: 'Feb meetup: io.js & ES6 & more',
+        day_of_week: 'Wednesday',
+        date: '4/02/2015',
+        start_time: '6:30 PM',
+        end_time: '9:30 PM'
+      },
+      {
+        group_name: 'Ruby and Rails Melbourne',
+        event_name: 'Hack Night',
+        day_of_week: 'Tuesday',
+        date: '10/02/2015',
+        start_time: '6:00 PM',
+        end_time: '9:00 PM'
+      },
+      {
+        group_name: 'Ruby and Rails Melbourne',
+        event_name: 'Ruby on Rails InstallFest',
+        day_of_week: 'Thursday',
+        date: '19/02/2015',
+        start_time: '6:30 PM',
+        end_time: '9:00 PM'
+      },
+      {
+        group_name: 'Ruby and Rails Melbourne',
+        event_name: 'Melbourne Ruby',
+        day_of_week: 'Wednesday',
+        date: '25/02/2015',
+        start_time: '6:00 PM',
+        end_time: '9:00 PM'
+      }
+    ]
+  end
+
+  def clean_up(file)
+    File.delete(file) if File.exist?(file)
+  end
+
+  before do
+    clean_up input_file
+    clean_up output_file
+  end
+
+  after do
+    clean_up input_file
+    clean_up output_file
+  end
+
+  it 'should fetch and save events for all meetups' do
+    VCR.use_cassette('getevents_functional_test') do
+      group_names = ['MelbNodeJS', 'Ruby-On-Rails-Oceania-Melbourne']
+
+      File.open(input_file, 'wb') do |file|
+        group_names.each { |name| file.print(name + "\n") }
+      end
+
+      args = ['getevents', '-i', input_file, '-o', output_file, '-k', '1234']
+
+      expect { MeetupThingy::App.start(args) }.to match_stdout('')
+
+      File.open output_file do |body|
+        csv = CSV.new(body, headers: true, header_converters: :symbol, converters: :all)
+        actual_csv_output = csv.to_a.map(&:to_hash)
+        expect(actual_csv_output).to eq(expected_csv_output)
+      end
+    end
+  end
+end

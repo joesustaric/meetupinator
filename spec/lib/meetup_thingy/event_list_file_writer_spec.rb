@@ -31,6 +31,18 @@ describe MeetupThingy::EventListFileWriter do
     ]
   end
 
+  def clean_up
+    File.delete(file_name) if File.exist?(file_name)
+  end
+
+  before do
+    clean_up
+  end
+
+  after do
+    clean_up
+  end
+
   describe '#write' do
     it 'writes the events to file' do
       subject.write events, file_name
