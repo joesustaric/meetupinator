@@ -6,10 +6,9 @@ describe MeetupThingy::App do
   include FakeFS::SpecHelpers::All
 
   let(:file_writer) { instance_double(MeetupThingy::EventListFileWriter) }
+
   describe '#version' do
-    it 'prints the app version' do
-      expect { subject.version }.to match_stdout('meetup_thingy v0.1')
-    end
+    it { expect { subject.version }.to match_stdout('meetup_thingy v0.1') }
   end
 
   describe '#extract_events' do
