@@ -86,6 +86,7 @@ PLATFORMS
 
 DEPENDENCIES
   fakefs
+  guard
   guard-rspec
   pry
   rake

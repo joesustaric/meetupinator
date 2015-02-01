@@ -8,6 +8,7 @@ group :development, :test do
   gem 'fakefs'
   gem 'vcr'
   gem 'rubocop', require: false
+  gem 'guard'
 end
 
 gem 'rake'

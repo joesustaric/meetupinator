@@ -16,8 +16,7 @@ module MeetupThingy
     def extract_row(event)
       start_time = time_with_offset(event['time'], event['utc_offset'])
       # According to http://www.meetup.com/meetup_api/docs/2/events/,
-      # if no duration is specified,
-      # we can assume 3 hours.
+      # if no duration is specified, we can assume 3 hours.
       # TODO: We should probably display a warning when this happens.
       duration = event['duration'] || three_hours
       end_time = start_time + ms_to_seconds(duration)
