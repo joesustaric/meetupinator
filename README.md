@@ -9,14 +9,14 @@ Give it a list of meetup names you're interested in and then run it and it can t
 Reads in a list of meetups from a file and writes a csv of all the ones that have future events.
 
 # Usage
-TODO
+```
+$./meetup getevents -i /location/of/input.txt -o /location/of/output.csv
+```
 
 # todo
 - [x] - given a file input and an output dir write a file
 - [ ] - provide options for date range
 - [ ] - Gem this
-- [ ]
-
 
 ##Spec Notes
 - Using VCR gem, will call API when tests are run first time.
