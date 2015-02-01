@@ -14,7 +14,8 @@ TODO
 # todo
 - [x] - given a file input and an output dir write a file
 - [ ] - provide options for date range
-- [ ] - ?
+- [ ] - Gem this
+- [ ]
 
 
 ##Spec Notes
