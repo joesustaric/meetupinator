@@ -1,6 +1,5 @@
 require 'pry'
 require 'rspec'
-#require 'webmock/rspec'
 require 'test_helpers/match_stdout'
 
 RSpec.configure do |config|

@@ -1,10 +1,9 @@
-# From http://stackoverflow.com/a/20583518/1668119, modified to work with RSpec 3.0
+# From http://stackoverflow.com/a/20583518/1668119
+# modified to work with RSpec 3.0
 RSpec::Matchers.define :match_stdout do |check|
-
   @capture = nil
 
   match do |block|
-
     begin
       stdout_saved = $stdout
       $stdout = StringIO.new

@@ -7,7 +7,8 @@ group :development, :test do
   gem 'webmock'
   gem 'fakefs'
   gem 'vcr'
-  gem 'thor'
+  gem 'rubocop', require: false
 end
 
 gem 'rake'
+gem 'thor'

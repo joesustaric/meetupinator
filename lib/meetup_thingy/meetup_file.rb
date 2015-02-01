@@ -1,6 +1,7 @@
 require 'csv'
 
 module MeetupThingy
+  # class description
   class MeetupFile
     attr_reader :file_content
 
@@ -10,7 +11,7 @@ module MeetupThingy
       load_file
     end
 
-    def get_meetups_missing_ids
+    def fill_meetups_missing_ids
       result = []
       @file_content.each do |row|
         result << row unless group_id_populated? row
@@ -18,7 +19,7 @@ module MeetupThingy
       result
     end
 
-    def update_file new_content
+    def update_file(new_content)
       @file_content.each do |old_row|
         new_content.each do |new_row|
           if group_match? old_row, new_row
@@ -31,12 +32,13 @@ module MeetupThingy
 
     private
 
-    def group_id_populated? row
+    def group_id_populated?(row)
       !row['group_id'].nil?
     end
 
     def save_file
-      CSV.open(@file_location, 'wb', {:force_quotes => false, :headers => true}) do |csv|
+      options = { force_quotes: false, headers: true }
+      CSV.open(@file_location, 'wb', options) do |csv|
         csv << @file_content.first.keys
         @file_content.each do |row|
           csv << row
@@ -45,14 +47,13 @@ module MeetupThingy
     end
 
     def load_file
-      CSV.foreach(@file_location, {:headers => true}) do |row|
+      CSV.foreach(@file_location, headers: true) do |row|
         @file_content << row.to_hash
       end
     end
 
-    def group_match? original_row, new_row
+    def group_match?(original_row, new_row)
       original_row['group_urlname'] == new_row['group_urlname']
     end
-
   end
 end
