@@ -20,11 +20,13 @@ module MeetupThingy
 
     option :input, aliases: '-i', required: true, type: :string
     option :output, aliases: '-o', required: true, type: :string
+    option :week, aliases: '-w', required: false, type: :boolean
 
     def extract_events
       output_file = options[:output]
+      week = options[:week]
       init
-      events = @event_finder.extract_events @group_names, @api
+      events = @event_finder.extract_events @group_names, @api, week
       @event_list_file_writer.write events, output_file
       puts "Output written to #{output_file}"
     end

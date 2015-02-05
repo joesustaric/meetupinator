@@ -21,6 +21,6 @@ describe MeetupThingy::EventFinder do
       allow(api).to receive(:get_upcoming_events).with(meetups.values) { events }
     end
 
-    it { expect(subject.extract_events(meetups.keys, api)).to eq(events) }
+    it { expect(subject.extract_events(meetups.keys, api, nil)).to eq(events) }
   end
 end
