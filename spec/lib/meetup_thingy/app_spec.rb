@@ -29,7 +29,16 @@ describe MeetupThingy::App do
       events = [:first_event, :second_event]
 
       subject.options = { input: input_file, output: output_file }
-      expect(event_finder).to receive(:extract_events).with(group_names, meetup_api).and_return(events)
+      expect(event_finder).to receive(:extract_events).with(group_names, meetup_api, nil).and_return(events)
+      expect(file_writer).to receive(:write).with(events, output_file)
+      subject.extract_events
+    end
+
+    it 'limits output to events in the next week when -w or --week is passed' do
+      events = [:some, :events]
+
+      subject.options = { input: input_file, output: output_file, week: true }
+      expect(event_finder).to receive(:extract_events).with(group_names, meetup_api, true).and_return(events)
       expect(file_writer).to receive(:write).with(events, output_file)
       subject.extract_events
     end

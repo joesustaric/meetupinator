@@ -53,7 +53,13 @@ describe MeetupThingy::MeetupAPI do
 
       it 'returns all the upcoming events' do
         VCR.use_cassette('events_single_group') do
-          expect(subject.get_upcoming_events([group_id]).size).to eq(expected_number_of_events)
+          expect(subject.get_upcoming_events([group_id], nil).size).to eq(expected_number_of_events)
+        end
+      end
+
+      it 'returns all the upcoming events for the next week' do
+        VCR.use_cassette('events_next_week') do
+          expect(subject.get_upcoming_events([group_id], true).size).to eq(1)
         end
       end
     end
@@ -64,7 +70,7 @@ describe MeetupThingy::MeetupAPI do
 
       it 'returns all the upcoming events' do
         VCR.use_cassette('events_multiple_groups') do
-          expect(subject.get_upcoming_events([meetup_ids]).size).to eq(expected_number_of_events)
+          expect(subject.get_upcoming_events([meetup_ids], nil).size).to eq(expected_number_of_events)
         end
       end
     end

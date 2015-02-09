@@ -25,9 +25,12 @@ module MeetupThingy
       extract_meetup_id get_meetup_response(uri)
     end
 
-    def get_upcoming_events(group_ids)
+    def get_upcoming_events(group_ids, week)
       query_string = 'sign=true&photo-host=public&status=upcoming&key=' +
                      @api_key + '&group_id=' + group_ids.join(',')
+
+      query_string << '&time=,1w' if week == true
+
       uri = URI::HTTP.build(host: @base_uri, path: @events_endpoint,
                             query: query_string)
       response = get_meetup_response uri
