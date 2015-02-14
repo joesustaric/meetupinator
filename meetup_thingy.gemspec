@@ -16,15 +16,15 @@ Gem::Specification.new do |s|
   # s.license       = '???'
   s.executables = ['meetup_thingy']
 
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'pry'
-  s.add_development_dependency 'guard-rspec'
-  s.add_development_dependency 'webmock'
-  s.add_development_dependency 'fakefs'
-  s.add_development_dependency 'vcr'
-  s.add_development_dependency 'rubocop'
-  s.add_development_dependency 'guard'
-  s.add_development_dependency 'rake'
-  s.add_runtime_dependency 'thor'
+  s.add_development_dependency 'rspec', '~> 3.2.0'
+  s.add_development_dependency 'pry', '~> 0.10.1'
+  s.add_development_dependency 'guard-rspec', '~> 4.5.0'
+  s.add_development_dependency 'webmock', '~> 1.20.4'
+  s.add_development_dependency 'fakefs', '~> 0.6.5'
+  s.add_development_dependency 'vcr', '~> 2.9.3'
+  s.add_development_dependency 'rubocop', '~> 0.29.1'
+  s.add_development_dependency 'guard', '~> 2.12.1'
+  s.add_development_dependency 'rake', '~> 10.4.2'
+  s.add_runtime_dependency 'thor', '~> 0.19.1'
 end
 
