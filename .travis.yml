@@ -3,5 +3,4 @@ rvm:
   - "2.1"
 env:
   - MEETUP_API_KEY="1234"
-script:
-  - rake spec build
+
