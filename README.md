@@ -4,19 +4,26 @@ Basically this is just a CLI tool to help you interface in a more automated way 
 Give it a list of meetup names you're interested in and then run it and it can tell you what the future meetups are.
 
 [![Build Status](https://travis-ci.org/joesustaric/meetup-thingy.svg?branch=master)](https://travis-ci.org/joesustaric/meetup-thingy)
+[![Gem Version](https://badge.fury.io/rb/meetup_thingy.svg)](http://badge.fury.io/rb/meetup_thingy)
 
 # What does it do atm?
 Reads in a list of meetups from a file and writes a csv of all the ones that have future events.
 
 # Usage
 ```
-$./meetup getevents -i /location/of/input.txt -o /location/of/output.csv
+$ meetup_thingy getevents -i /location/of/input.txt -o /location/of/output.csv
+```
+
+## During development
+
+```
+$ ruby -Ilib ./bin/meetup_thingy ...
 ```
 
 # todo
 - [x] - given a file input and an output dir write a file
 - [ ] - provide options for date range
-- [ ] - Gem this
+- [x] - Gem this
 
 ##Spec Notes
 - Using VCR gem, will call API when tests are run first time.
