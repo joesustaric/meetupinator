@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    meetup_thingy (0.1)
+    meetup_thingy (0.2)
       thor (~> 0.19.1)
 
 GEM
