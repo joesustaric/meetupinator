@@ -1,4 +1,9 @@
-$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
+lib = File.expand_path('../lib/', __FILE__)
+puts 'lib is: ', lib
+$:.unshift lib unless $:.include?(lib)
+
+puts '$: is:', $:
+
 require "meetup_thingy/version"
 
 require 'rspec/core/rake_task'
