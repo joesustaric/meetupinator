@@ -1,9 +1,3 @@
-PATH
-  remote: .
-  specs:
-    meetup_thingy (0.1)
-      thor
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -95,10 +89,10 @@ DEPENDENCIES
   fakefs
   guard
   guard-rspec
-  meetup_thingy!
   pry
   rake
   rspec
   rubocop
+  thor
   vcr
   webmock
