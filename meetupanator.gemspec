@@ -12,19 +12,19 @@ Gem::Specification.new do |s|
   s.authors = ["Joe Sustaric", "John Fulton", "Charles Korn"]
   s.files = Dir['lib/   *.rb'] + Dir['bin/*'] + ['README.md']
   s.test_files = Dir['spec/*']
-  s.homepage = 'https://github.com/joesustaric/meetup-thingy'
+  s.homepage = 'https://github.com/joesustaric/meetupanator'
   # s.license       = '???'
   s.executables = ['meetupanator']
 
-  s.add_development_dependency 'rspec', '~> 3.2.0'
-  s.add_development_dependency 'pry', '~> 0.10.1'
-  s.add_development_dependency 'guard-rspec', '~> 4.5.0'
-  s.add_development_dependency 'webmock', '~> 1.20.4'
-  s.add_development_dependency 'fakefs', '~> 0.6.5'
-  s.add_development_dependency 'vcr', '~> 2.9.3'
-  s.add_development_dependency 'rubocop', '~> 0.29.1'
-  s.add_development_dependency 'guard', '~> 2.12.1'
-  s.add_development_dependency 'rake', '~> 10.4.2'
-  s.add_runtime_dependency 'thor', '~> 0.19.1'
+  s.add_development_dependency 'rspec', '~> 3.2'
+  s.add_development_dependency 'pry', '~> 0.10'
+  s.add_development_dependency 'guard-rspec', '~> 4.5'
+  s.add_development_dependency 'webmock', '~> 1.20'
+  s.add_development_dependency 'fakefs', '~> 0.6'
+  s.add_development_dependency 'vcr', '~> 2.9'
+  s.add_development_dependency 'rubocop', '~> 0.29'
+  s.add_development_dependency 'guard', '~> 2.12'
+  s.add_development_dependency 'rake', '~> 10.4'
+  s.add_runtime_dependency 'thor', '~> 0.19'
 end
 
