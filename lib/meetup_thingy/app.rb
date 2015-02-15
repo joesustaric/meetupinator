@@ -2,7 +2,7 @@ require 'thor'
 require 'meetup_thingy'
 
 module MeetupThingy
-  # calss doco
+  # class doco
   class App < Thor
     attr_accessor :event_finder
     attr_accessor :event_list_file_writer
