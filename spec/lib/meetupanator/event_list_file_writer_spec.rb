@@ -1,8 +1,8 @@
 require 'fakefs/spec_helpers'
 require 'spec_helper'
-require 'meetup_thingy/event_list_file_writer'
+require 'meetupanator/event_list_file_writer'
 
-describe MeetupThingy::EventListFileWriter do
+describe Meetupanator::EventListFileWriter do
   include FakeFS::SpecHelpers::All
 
   let(:file_name) { 'output.csv' }

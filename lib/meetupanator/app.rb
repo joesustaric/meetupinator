@@ -1,7 +1,7 @@
 require 'thor'
-require 'meetup_thingy'
+require 'meetupanator'
 
-module MeetupThingy
+module Meetupanator
   # class doco
   class App < Thor
     attr_accessor :event_finder
@@ -35,17 +35,17 @@ module MeetupThingy
     map '--version' => 'version'
     map '-v' => 'version'
     def version
-      puts 'meetup_thingy v' + MeetupThingy::VERSION
+      puts 'meetupanator v' + Meetupanator::VERSION
     end
 
     private
 
     # FIXME: This is a horribly gross attempt at dependency injection
     def init
-      @api = MeetupThingy::MeetupAPI.new(options[:meetup_api_key])
-      @group_names = MeetupThingy::InputFileReader.group_names options[:input]
-      @event_finder = MeetupThingy::EventFinder.new
-      @event_list_file_writer ||= MeetupThingy::EventListFileWriter.new
+      @api = Meetupanator::MeetupAPI.new(options[:meetup_api_key])
+      @group_names = Meetupanator::InputFileReader.group_names options[:input]
+      @event_finder = Meetupanator::EventFinder.new
+      @event_list_file_writer ||= Meetupanator::EventListFileWriter.new
     end
   end
 end

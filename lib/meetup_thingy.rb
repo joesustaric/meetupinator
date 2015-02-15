@@ -1,6 +1,0 @@
-require 'meetup_thingy/app'
-require 'meetup_thingy/event_finder'
-require 'meetup_thingy/event_list_file_writer'
-require 'meetup_thingy/meetup_api'
-require 'meetup_thingy/version'
-require 'meetup_thingy/input_file_reader'

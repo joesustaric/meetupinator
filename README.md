@@ -1,23 +1,23 @@
-# Meetup Thingy
-I could not think of decent name. This is just a meetup.com thingy app.
+# Meetupanator
+This is just a meetup.com console app so far.
 Basically this is just a CLI tool to help you interface in a more automated way with meetup.
 Give it a list of meetup names you're interested in and then run it and it can tell you what the future meetups are.
 
 [![Build Status](https://travis-ci.org/joesustaric/meetup-thingy.svg?branch=master)](https://travis-ci.org/joesustaric/meetup-thingy)
-[![Gem Version](https://badge.fury.io/rb/meetup_thingy.svg)](http://badge.fury.io/rb/meetup_thingy)
+[![Gem Version](https://badge.fury.io/rb/meetupanator.svg)](http://badge.fury.io/rb/meetupanator)
 
 # What does it do atm?
 Reads in a list of meetups from a file and writes a csv of all the ones that have future events.
 
 # Usage
 ```
-$ meetup_thingy getevents -i /location/of/input.txt -o /location/of/output.csv
+$ meetupanator getevents -i /location/of/input.txt -o /location/of/output.csv
 ```
 
 ## During development
 
 ```
-$ ruby -Ilib ./bin/meetup_thingy ...
+$ ruby -Ilib ./bin/meetupanator ...
 ```
 
 # todo

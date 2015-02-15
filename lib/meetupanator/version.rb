@@ -1,4 +1,4 @@
 # Module Comment
-module MeetupThingy
+module Meetupanator
   VERSION = '0.2'
 end

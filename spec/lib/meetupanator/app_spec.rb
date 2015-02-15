@@ -1,8 +1,8 @@
 require 'fakefs/spec_helpers'
 require 'spec_helper'
-require 'meetup_thingy/app'
+require 'meetupanator/app'
 
-describe MeetupThingy::App do
+describe Meetupanator::App do
   include FakeFS::SpecHelpers::All
 
   let(:input_file) { 'input.txt' }
@@ -13,15 +13,15 @@ describe MeetupThingy::App do
   let(:group_names) { ['First meetup group', 'Second meetup group'] }
 
   before do
-    allow(MeetupThingy::EventFinder).to receive(:new).and_return(event_finder)
-    allow(MeetupThingy::MeetupAPI).to receive(:new).and_return(meetup_api)
-    allow(MeetupThingy::EventListFileWriter).to receive(:new).and_return(file_writer)
-    stub_const('MeetupThingy::VERSION', '9.123')
+    allow(Meetupanator::EventFinder).to receive(:new).and_return(event_finder)
+    allow(Meetupanator::MeetupAPI).to receive(:new).and_return(meetup_api)
+    allow(Meetupanator::EventListFileWriter).to receive(:new).and_return(file_writer)
+    stub_const('Meetupanator::VERSION', '9.123')
     write_input_file
   end
 
   describe '#version' do
-    it { expect { subject.version }.to match_stdout('meetup_thingy v9.123') }
+    it { expect { subject.version }.to match_stdout('meetupanator v9.123') }
   end
 
   describe '#extract_events' do

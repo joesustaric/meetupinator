@@ -1,0 +1,5 @@
+#! /usr/bin/env ruby
+
+require 'meetupanator'
+
+Meetupanator::App.start(ARGV)

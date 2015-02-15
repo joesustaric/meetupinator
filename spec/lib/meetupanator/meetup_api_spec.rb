@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'vcr_setup'
-require 'meetup_thingy/meetup_api'
+require 'meetupanator/meetup_api'
 
-describe MeetupThingy::MeetupAPI do
+describe Meetupanator::MeetupAPI do
   let(:group_id) { 980_007_2 }
 
   describe '#new' do
@@ -15,7 +15,7 @@ describe MeetupThingy::MeetupAPI do
 
       it 'uses the API key given in the constructor' do
         key = 'My super-secret API key'
-        subject = MeetupThingy::MeetupAPI.new key
+        subject = Meetupanator::MeetupAPI.new key
         expect(subject.api_key).to eq(key)
       end
     end
@@ -31,7 +31,7 @@ describe MeetupThingy::MeetupAPI do
 
       it 'uses the API key given in the constructor if one is given' do
         key = 'My super-secret API key'
-        subject = MeetupThingy::MeetupAPI.new key
+        subject = Meetupanator::MeetupAPI.new key
         expect(subject.api_key).to eq(key)
       end
     end

@@ -1,4 +1,4 @@
-module MeetupThingy
+module Meetupanator
   # class doco
   class InputFileReader
     def self.group_names(file_name)

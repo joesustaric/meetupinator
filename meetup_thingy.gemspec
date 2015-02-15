@@ -1,11 +1,11 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'meetup_thingy/version'
+require 'meetupanator/version'
 
 Gem::Specification.new do |s|
-  s.name = 'meetup_thingy'
-  s.version = MeetupThingy::VERSION
+  s.name = 'meetupanator'
+  s.version = Meetupanator::VERSION
   s.date = '2015-02-14'
   s.summary = "Tool to generate weekly meetup emails"
   s.description = "Tool to generate weekly meetup emails using the Meetup API"
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/*']
   s.homepage = 'https://github.com/joesustaric/meetup-thingy'
   # s.license       = '???'
-  s.executables = ['meetup_thingy']
+  s.executables = ['meetupanator']
 
   s.add_development_dependency 'rspec', '~> 3.2.0'
   s.add_development_dependency 'pry', '~> 0.10.1'

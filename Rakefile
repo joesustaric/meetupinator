@@ -1,7 +1,7 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require "meetup_thingy/version"
+require "meetupanator/version"
 
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
@@ -17,10 +17,10 @@ end
 
 desc 'Build the gem'
 task :build do
-  system "gem build meetup_thingy.gemspec"
+  system "gem build meetupanator.gemspec"
 end
 
 desc 'Publish the gem to rubygems.org'
 task :publish => :build do
-  system "gem push meetup_thingy-#{MeetupThingy::VERSION}.gem"
+  system "gem push meetupanator-#{Meetupanator::VERSION}.gem"
 end

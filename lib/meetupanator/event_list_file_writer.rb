@@ -1,6 +1,6 @@
 require 'csv'
 
-module MeetupThingy
+module Meetupanator
   # class def
   class EventListFileWriter
     def write(events, file_name)
