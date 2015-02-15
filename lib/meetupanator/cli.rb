@@ -34,6 +34,6 @@ module Meetupanator
       puts Meetupanator::App.version
     end
 
-    default_task :getevents
+    default_task :run_app
   end
 end
