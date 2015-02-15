@@ -18,7 +18,8 @@ describe 'meetupanator' do
         day_of_week: 'Wednesday',
         date: '4/02/2015',
         start_time: '6:30 PM',
-        end_time: '9:30 PM'
+        end_time: '9:30 PM',
+        event_url: 'http://www.meetup.com/MelbNodeJS/events/219976432/'
       },
       {
         group_name: 'Ruby and Rails Melbourne',
@@ -26,7 +27,8 @@ describe 'meetupanator' do
         day_of_week: 'Tuesday',
         date: '10/02/2015',
         start_time: '6:00 PM',
-        end_time: '9:00 PM'
+        end_time: '9:00 PM',
+        event_url: 'http://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/events/219387827/'
       },
       {
         group_name: 'Ruby and Rails Melbourne',
@@ -34,7 +36,8 @@ describe 'meetupanator' do
         day_of_week: 'Thursday',
         date: '19/02/2015',
         start_time: '6:30 PM',
-        end_time: '9:00 PM'
+        end_time: '9:00 PM',
+        event_url: 'http://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/events/219051382/'
       },
       {
         group_name: 'Ruby and Rails Melbourne',
@@ -42,7 +45,8 @@ describe 'meetupanator' do
         day_of_week: 'Wednesday',
         date: '25/02/2015',
         start_time: '6:00 PM',
-        end_time: '9:00 PM'
+        end_time: '9:00 PM',
+        event_url: 'http://www.meetup.com/Ruby-On-Rails-Oceania-Melbourne/events/219387830/'
       }
     ]
   end
