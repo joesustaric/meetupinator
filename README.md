@@ -3,7 +3,7 @@ This is just a meetup.com console app so far.
 Basically this is just a CLI tool to help you interface in a more automated way with meetup.
 Give it a list of meetup names you're interested in and then run it and it can tell you what the future meetups are.
 
-[![Build Status](https://travis-ci.org/joesustaric/meetup-thingy.svg?branch=master)](https://travis-ci.org/joesustaric/meetup-thingy)
+[![Build Status](https://travis-ci.org/joesustaric/meetupanator.svg?branch=master)](https://travis-ci.org/joesustaric/meetupanator)
 [![Gem Version](https://badge.fury.io/rb/meetupanator.svg)](http://badge.fury.io/rb/meetupanator)
 
 # What does it do atm?
