@@ -1,6 +1,6 @@
 require 'vcr_setup'
 require 'spec_helper'
-require 'meetupanator/app'
+require 'meetupanator/cli'
 
 describe 'meetupanator' do
   # In an ideal world, we'd use FakeFS here.

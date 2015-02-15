@@ -1,52 +1,35 @@
 require 'fakefs/spec_helpers'
 require 'spec_helper'
-require 'meetupanator/CLI'
+require 'meetupanator/app'
 
-describe Meetupanator::CLI do
-  include FakeFS::SpecHelpers::All
-
-  let(:input_file) { 'input.txt' }
-  let(:output_file) { 'output.csv' }
-  let(:event_finder) { double('event finder') }
-  let(:file_writer) { double('file writer') }
-  let(:meetup_api) { double('meetup api') }
-  let(:group_names) { ['First meetup group', 'Second meetup group'] }
-
-  before do
-    allow(Meetupanator::EventFinder).to receive(:new).and_return(event_finder)
-    allow(Meetupanator::MeetupAPI).to receive(:new).and_return(meetup_api)
-    allow(Meetupanator::EventListFileWriter).to receive(:new).and_return(file_writer)
-    stub_const('Meetupanator::VERSION', '9.123')
-    write_input_file
-  end
-
-  describe '#version' do
-    it { expect { subject.version }.to match_stdout('meetupanator v9.123') }
-  end
-
-  describe '#extract_events' do
-    it 'gets all upcoming events for the given groups and saves them to file' do
-      events = [:first_event, :second_event]
-
-      subject.options = { input: input_file, output: output_file }
-      expect(event_finder).to receive(:extract_events).with(group_names, meetup_api, nil).and_return(events)
-      expect(file_writer).to receive(:write).with(events, output_file)
-      subject.extract_events
+describe Meetupanator::App do
+  describe '#run' do
+    let(:input_file) { 'input.txt' }
+    let(:output_file) { 'output.csv' }
+    let(:event_finder) { double('event finder') }
+    let(:file_writer) { double('file writer') }
+    let(:meetup_api) { double('meetup api') }
+    let(:group_names) { ['First meetup group', 'Second meetup group'] }
+    let(:events) { double('events') }
+    let(:args) do
+      {
+        meetup_api_key: 1234,
+        input: input_file,
+        output: output_file,
+        week: false
+      }
     end
 
-    it 'limits output to events in the next week when -w or --week is passed' do
-      events = [:some, :events]
-
-      subject.options = { input: input_file, output: output_file, week: true }
-      expect(event_finder).to receive(:extract_events).with(group_names, meetup_api, true).and_return(events)
-      expect(file_writer).to receive(:write).with(events, output_file)
-      subject.extract_events
-    end
-  end
-
-  def write_input_file
-    File.open(input_file, 'wb') do |file|
-      group_names.each { |name| file << name + "\n" }
+    context 'when input file / output file / api key / is specified' do
+      it 'executes the program' do
+        expect(Meetupanator::MeetupAPI).to receive(:new).and_return(meetup_api)
+        expect(Meetupanator::InputFileReader).to receive(:group_names).with(input_file).and_return(group_names)
+        expect(Meetupanator::EventFinder).to receive(:new).and_return(event_finder)
+        expect(Meetupanator::EventListFileWriter).to receive(:new).and_return(file_writer)
+        expect(event_finder).to receive(:extract_events).with(group_names, meetup_api, false).and_return(events)
+        expect(file_writer).to receive(:write).with(events, output_file)
+        Meetupanator::App.run(args)
+      end
     end
   end
 end

@@ -29,7 +29,7 @@ module Meetupanator
       query_string = 'sign=true&photo-host=public&status=upcoming&key=' +
                      @api_key + '&group_id=' + group_ids.join(',')
 
-      query_string << '&time=,1w' if week == true
+      query_string << '&time=,1w' if week
 
       uri = URI::HTTP.build(host: @base_uri, path: @events_endpoint,
                             query: query_string)

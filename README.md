@@ -13,6 +13,11 @@ Reads in a list of meetups from a file and writes a csv of all the ones that hav
 ```
 $ meetupanator getevents -i /location/of/input.txt -o /location/of/output.csv
 ```
+or  
+```
+$ meetupanator getevents -i /location/of/input.txt
+```
+This will write a otuput.csv to the current directory.
 
 ## During development
 
