@@ -66,7 +66,7 @@ describe 'meetupanator' do
     it 'will fetch and save events for all meetups' do
       VCR.use_cassette('getevents_functional_test') do
         args = ['getevents', '-i', input_file, '-o', output_file, '-k', '1234']
-        expect { Meetupanator::App.start(args) }.to match_stdout("Output written to #{output_file}")
+        expect { Meetupanator::CLI.start(args) }.to match_stdout("Output written to #{output_file}")
         expect(read_output_file).to eq(expected_csv_output)
       end
     end
@@ -77,7 +77,7 @@ describe 'meetupanator' do
 
     it 'returns the version' do
       args = ['--version']
-      expect { Meetupanator::App.start(args) }.to match_stdout('meetupanator v9.23')
+      expect { Meetupanator::CLI.start(args) }.to match_stdout('meetupanator v9.23')
     end
   end
 
@@ -86,7 +86,7 @@ describe 'meetupanator' do
 
     it 'returns the version' do
       args = ['-v']
-      expect { Meetupanator::App.start(args) }.to match_stdout('meetupanator v9.23')
+      expect { Meetupanator::CLI.start(args) }.to match_stdout('meetupanator v9.23')
     end
   end
 

@@ -2,4 +2,4 @@
 
 require 'meetupanator'
 
-Meetupanator::App.start(ARGV)
+Meetupanator::CLI.start

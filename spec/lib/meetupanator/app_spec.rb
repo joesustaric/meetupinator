@@ -1,8 +1,8 @@
 require 'fakefs/spec_helpers'
 require 'spec_helper'
-require 'meetupanator/app'
+require 'meetupanator/CLI'
 
-describe Meetupanator::App do
+describe Meetupanator::CLI do
   include FakeFS::SpecHelpers::All
 
   let(:input_file) { 'input.txt' }
