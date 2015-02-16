@@ -13,7 +13,8 @@ describe Meetupanator::EventListFileWriter do
         'name' => 'The Time When We Eat Chocolate',
         'time' => 142_355_160_000_0,
         'utc_offset' => 396_000_00,
-        'duration' => 720_000_0
+        'duration' => 720_000_0,
+        'event_url' => 'http://www.awesomemeetup.com/'
       }
     ]
   end
@@ -26,7 +27,8 @@ describe Meetupanator::EventListFileWriter do
         day_of_week: 'Tuesday',
         date: '10/02/2015',
         start_time: '6:00 PM',
-        end_time: '8:00 PM'
+        end_time: '8:00 PM',
+        event_url: 'http://www.awesomemeetup.com/'
       }
     ]
   end

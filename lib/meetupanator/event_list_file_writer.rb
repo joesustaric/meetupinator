@@ -6,7 +6,7 @@ module Meetupanator
     def write(events, file_name)
       CSV.open(file_name, 'wb') do |csv|
         csv << ['Group name', 'Event name', 'Day of week', 'Date',
-                'Start time', 'End time']
+                'Start time', 'End time', 'Event URL']
         events.each do |event|
           csv << extract_row(event)
         end
@@ -16,17 +16,23 @@ module Meetupanator
     private
 
     def extract_row(event)
+      start_time, end_time = extract_times event
+      [
+        event['group']['name'], event['name'], start_time.strftime('%A'),
+        start_time.strftime('%-e/%m/%Y'), start_time.strftime('%-l:%M %p'),
+        end_time.strftime('%-l:%M %p'), event['event_url']
+      ]
+    end
+
+    def extract_times(event)
       start_time = time_with_offset(event['time'], event['utc_offset'])
       # According to http://www.meetup.com/meetup_api/docs/2/events/,
       # if no duration is specified, we can assume 3 hours.
       # TODO: We should probably display a warning when this happens.
       duration = event['duration'] || three_hours
       end_time = start_time + ms_to_seconds(duration)
-      [
-        event['group']['name'], event['name'], start_time.strftime('%A'),
-        start_time.strftime('%-e/%m/%Y'), start_time.strftime('%-l:%M %p'),
-        end_time.strftime('%-l:%M %p')
-      ]
+
+      [start_time, end_time]
     end
 
     def time_with_offset(time, offset)

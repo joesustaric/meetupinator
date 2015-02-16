@@ -1,4 +1,5 @@
 require 'meetupanator/app'
+require 'meetupanator/cli'
 require 'meetupanator/event_finder'
 require 'meetupanator/event_list_file_writer'
 require 'meetupanator/meetup_api'
