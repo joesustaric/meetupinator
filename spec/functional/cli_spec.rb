@@ -6,8 +6,7 @@ require 'meetupanator/cli'
 # but it won't engage the vcr gem because I think it might
 # spawn a new process? (I think)
 describe 'The meetupanator command line interface' do
-
-  let(:meetups) { ['MelbNodeJS','Ruby-On-Rails-Oceania-Melbourne'] }
+  let(:meetups) { ['MelbNodeJS', 'Ruby-On-Rails-Oceania-Melbourne'] }
 
   before do
     FileUtils.mkdir_p('test')
@@ -23,7 +22,6 @@ describe 'The meetupanator command line interface' do
   end
 
   context 'no arguments' do
-
   end
 
   context 'meetup api and input file specified' do
@@ -36,7 +34,5 @@ describe 'The meetupanator command line interface' do
   end
 
   context 'meetup api and input file and output file specified' do
-
   end
-
 end

@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 15 Feb 2015 10:20:46 GMT
+      - Mon, 16 Feb 2015 11:34:32 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -29,12 +29,12 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dea875f01d6d59a6f43850f63cca3bf2c1423995645; expires=Mon, 15-Feb-16
-        10:20:45 GMT; path=/; domain=.meetup.com; HttpOnly
+      - __cfduid=d5852e46b905618d37de6f5bd6de620801424086471; expires=Tue, 16-Feb-16
+        11:34:31 GMT; path=/; domain=.meetup.com; HttpOnly
       X-Meetup-Server:
       - api1.int.meetup.com
       X-Meetup-Request-Id:
-      - 9f19569c-591e-49b7-b219-79628745185e
+      - 872289a9-bca3-46dd-9ef5-ceb1aacc6884
       X-Ratelimit-Limit:
       - '30'
       X-Ratelimit-Remaining:
@@ -46,13 +46,13 @@ http_interactions:
       X-Accepted-Oauth-Scopes:
       - basic
       Etag:
-      - W/"1ec48eff46211929dc138647321dc7be"
+      - W/"7c67ff0927ca1733ccac4b31d43f8d55"
       Vary:
       - Accept-Encoding,User-Agent
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 1b90c650bed519b6-SYD
+      - 1b996fc145420b0e-SYD
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -99,17 +99,17 @@ http_interactions:
         aW5uZXJzIGFuZCBleHBlcnRzIHdlbGNvbWUgYWxpa2UuPFwvcD4iLCJuYW1l
         IjoiVGhlIE1lbGJvdXJuZSBOb2RlLkpTIE1lZXR1cCBHcm91cCIsInJhdGlu
         ZyI6NC4zNiwidXJsbmFtZSI6Ik1lbGJOb2RlSlMiLCJsYXQiOi0zNy44MTAw
-        MDEzNzMyOTEwMTYsIm1lbWJlcnMiOjY0OH1dLCJtZXRhIjp7ImxvbiI6IiIs
+        MDEzNzMyOTEwMTYsIm1lbWJlcnMiOjY1MX1dLCJtZXRhIjp7ImxvbiI6IiIs
         ImNvdW50IjoxLCJsaW5rIjoiaHR0cDpcL1wvYXBpLm1lZXR1cC5jb21cLzJc
         L2dyb3VwcyIsIm5leHQiOiIiLCJ0b3RhbF9jb3VudCI6MSwidXJsIjoiaHR0
         cDpcL1wvYXBpLm1lZXR1cC5jb21cLzJcL2dyb3Vwcz9rZXk9ZTE3NmY3MDE3
         NzEyYzYzNmQzMDc4NTIyMTZkODI4JnJhZGl1cz0yNS4wJm9yZGVyPWlkJmdy
         b3VwX3VybG5hbWU9TWVsYk5vZGVKUyZkZXNjPWZhbHNlJm9mZnNldD0wJmZv
         cm1hdD1qc29uJnBhZ2U9MjAwJmZpZWxkcz0iLCJpZCI6IiIsInRpdGxlIjoi
-        TWVldHVwIEdyb3VwcyB2MiIsInVwZGF0ZWQiOjE0MjM4NzQ3MDUwMDAsImRl
+        TWVldHVwIEdyb3VwcyB2MiIsInVwZGF0ZWQiOjE0MjQwNTU2MTIwMDAsImRl
         c2NyaXB0aW9uIjoiIiwibWV0aG9kIjoiR3JvdXBzIiwibGF0IjoiIn19Cg==
     http_version:
-  recorded_at: Sun, 15 Feb 2015 10:20:46 GMT
+  recorded_at: Mon, 16 Feb 2015 11:34:32 GMT
 - request:
     method: get
     uri: http://api.meetup.com/2/groups?group_urlname=Ruby-On-Rails-Oceania-Melbourne&key=1234
@@ -131,7 +131,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 15 Feb 2015 10:20:47 GMT
+      - Mon, 16 Feb 2015 11:34:32 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -139,30 +139,30 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d08c1bd50f5bae405ddf21a591d061aa41423995647; expires=Mon, 15-Feb-16
-        10:20:47 GMT; path=/; domain=.meetup.com; HttpOnly
+      - __cfduid=dffa8ebd6ace1146eb3c7874eae404c851424086472; expires=Tue, 16-Feb-16
+        11:34:32 GMT; path=/; domain=.meetup.com; HttpOnly
       X-Meetup-Server:
-      - api13.int.meetup.com
+      - api0.int.meetup.com
       X-Meetup-Request-Id:
-      - 64116a75-5f96-4462-afe4-63762a1cee3a
+      - 3dba5726-b577-4a66-8e75-b7d124b42418
       X-Ratelimit-Limit:
       - '30'
       X-Ratelimit-Remaining:
       - '28'
       X-Ratelimit-Reset:
-      - '8'
+      - '9'
       X-Oauth-Scopes:
       - basic
       X-Accepted-Oauth-Scopes:
       - basic
       Etag:
-      - W/"5e2accbe89af95d293337d6db071f103"
+      - W/"42449e6a10c5c3f3e43258440bdfa2ff"
       Vary:
       - Accept-Encoding,User-Agent
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 1b90c65c26150b1a-SYD
+      - 1b996fc4b1360b08-SYD
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -213,7 +213,7 @@ http_interactions:
         eSBjaGF0IHdpdGggbWF0ZXMuPFwvcD5cbjxwPsKgPFwvcD4iLCJuYW1lIjoi
         UnVieSBhbmQgUmFpbHMgTWVsYm91cm5lIiwicmF0aW5nIjo0LjcsInVybG5h
         bWUiOiJSdWJ5LU9uLVJhaWxzLU9jZWFuaWEtTWVsYm91cm5lIiwibGF0Ijot
-        MzcuODEwMDAxMzczMjkxMDE2LCJtZW1iZXJzIjoxMDIxfV0sIm1ldGEiOnsi
+        MzcuODEwMDAxMzczMjkxMDE2LCJtZW1iZXJzIjoxMDI0fV0sIm1ldGEiOnsi
         bG9uIjoiIiwiY291bnQiOjEsImxpbmsiOiJodHRwOlwvXC9hcGkubWVldHVw
         LmNvbVwvMlwvZ3JvdXBzIiwibmV4dCI6IiIsInRvdGFsX2NvdW50IjoxLCJ1
         cmwiOiJodHRwOlwvXC9hcGkubWVldHVwLmNvbVwvMlwvZ3JvdXBzP2tleT1l
@@ -221,10 +221,10 @@ http_interactions:
         ZXI9aWQmZ3JvdXBfdXJsbmFtZT1SdWJ5LU9uLVJhaWxzLU9jZWFuaWEtTWVs
         Ym91cm5lJmRlc2M9ZmFsc2Umb2Zmc2V0PTAmZm9ybWF0PWpzb24mcGFnZT0y
         MDAmZmllbGRzPSIsImlkIjoiIiwidGl0bGUiOiJNZWV0dXAgR3JvdXBzIHYy
-        IiwidXBkYXRlZCI6MTQyMzk2MTIzNjAwMCwiZGVzY3JpcHRpb24iOiIiLCJt
+        IiwidXBkYXRlZCI6MTQyNDA4NTY1MTAwMCwiZGVzY3JpcHRpb24iOiIiLCJt
         ZXRob2QiOiJHcm91cHMiLCJsYXQiOiIifX0K
     http_version:
-  recorded_at: Sun, 15 Feb 2015 10:20:47 GMT
+  recorded_at: Mon, 16 Feb 2015 11:34:32 GMT
 - request:
     method: get
     uri: http://api.meetup.com/2/events?group_id=3129782,9800072&key=1234&photo-host=public&sign=true&status=upcoming
@@ -246,7 +246,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 15 Feb 2015 10:20:49 GMT
+      - Mon, 16 Feb 2015 11:34:33 GMT
       Content-Type:
       - application/json;charset=utf-8
       Transfer-Encoding:
@@ -254,30 +254,30 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d279266a2ea3471bde3d3d2204015b9801423995647; expires=Mon, 15-Feb-16
-        10:20:47 GMT; path=/; domain=.meetup.com; HttpOnly
+      - __cfduid=da16cceb3cdc8dd95b6b00b19535c62f31424086472; expires=Tue, 16-Feb-16
+        11:34:32 GMT; path=/; domain=.meetup.com; HttpOnly
       X-Meetup-Server:
       - api2.int.meetup.com
       X-Meetup-Request-Id:
-      - c5d360ca-7721-404e-a82d-e502dc3a735d
+      - 70ac61b0-f84d-4053-9cd7-b6bc284a2c6f
       X-Ratelimit-Limit:
       - '30'
       X-Ratelimit-Remaining:
       - '27'
       X-Ratelimit-Reset:
-      - '7'
+      - '9'
       X-Oauth-Scopes:
       - basic
       X-Accepted-Oauth-Scopes:
       - basic
       Etag:
-      - W/"cbd18f20f42ba1cc83b9b170337ebd71"
+      - W/"452bc340922a4ee97f550e02e1a38334"
       Vary:
       - Accept-Encoding,User-Agent
       Server:
       - cloudflare-nginx
       Cf-Ray:
-      - 1b90c65fefd204c8-SYD
+      - 1b996fc800e219c8-SYD
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -288,8 +288,8 @@ http_interactions:
         MSBLaW5nIFN0cmVldCAiLCJsYXQiOi0zNy44MTcxNSwiY291bnRyeSI6ImF1
         IiwiY2l0eSI6Ik1lbGJvdXJuZSJ9LCJpZCI6IjIxOTA1MTM4MiIsInV0Y19v
         ZmZzZXQiOjM5NjAwMDAwLCJkdXJhdGlvbiI6OTAwMDAwMCwidGltZSI6MTQy
-        NDMzMTAwMDAwMCwid2FpdGxpc3RfY291bnQiOjEzLCJ1cGRhdGVkIjoxNDE3
-        NjQ5MjQ1MDAwLCJ5ZXNfcnN2cF9jb3VudCI6NjIsImNyZWF0ZWQiOjE0MTc2
+        NDMzMTAwMDAwMCwid2FpdGxpc3RfY291bnQiOjE3LCJ1cGRhdGVkIjoxNDE3
+        NjQ5MjQ1MDAwLCJ5ZXNfcnN2cF9jb3VudCI6NTksImNyZWF0ZWQiOjE0MTc2
         NDkyNDUwMDAsImV2ZW50X3VybCI6Imh0dHA6XC9cL3d3dy5tZWV0dXAuY29t
         XC9SdWJ5LU9uLVJhaWxzLU9jZWFuaWEtTWVsYm91cm5lXC9ldmVudHNcLzIx
         OTA1MTM4MlwvIiwiZGVzY3JpcHRpb24iOiI8cD5EbyB5b3Ugd2FudCB0byBs
@@ -377,7 +377,7 @@ http_interactions:
         LCJjaXR5IjoiUmljaG1vbmQifSwiaWQiOiJmZHhmZGx5dGRiaGMiLCJ1dGNf
         b2Zmc2V0IjozOTYwMDAwMCwiZHVyYXRpb24iOjEwODAwMDAwLCJ0aW1lIjox
         NDI0ODQ3NjAwMDAwLCJ3YWl0bGlzdF9jb3VudCI6MCwidXBkYXRlZCI6MTQx
-        OTEzMTM2MDAwMCwieWVzX3JzdnBfY291bnQiOjM5LCJjcmVhdGVkIjoxNDE5
+        OTEzMTM2MDAwMCwieWVzX3JzdnBfY291bnQiOjQzLCJjcmVhdGVkIjoxNDE5
         MTMxMzYwMDAwLCJldmVudF91cmwiOiJodHRwOlwvXC93d3cubWVldHVwLmNv
         bVwvUnVieS1Pbi1SYWlscy1PY2VhbmlhLU1lbGJvdXJuZVwvZXZlbnRzXC8y
         MTkzODc4MzBcLyIsImRlc2NyaXB0aW9uIjoiPHA+QW4gZXZlbmluZyBvZiB0
@@ -408,7 +408,7 @@ http_interactions:
         ZCI6InRkeGZkbHl0ZmJuYiIsInV0Y19vZmZzZXQiOjM5NjAwMDAwLCJkdXJh
         dGlvbiI6MTA4MDAwMDAsInRpbWUiOjE0MjU5NzA4MDAwMDAsIndhaXRsaXN0
         X2NvdW50IjowLCJ1cGRhdGVkIjoxNDE5MTMxNzA0MDAwLCJ5ZXNfcnN2cF9j
-        b3VudCI6NiwiY3JlYXRlZCI6MTQxOTEzMTcwNDAwMCwiZXZlbnRfdXJsIjoi
+        b3VudCI6NywiY3JlYXRlZCI6MTQxOTEzMTcwNDAwMCwiZXZlbnRfdXJsIjoi
         aHR0cDpcL1wvd3d3Lm1lZXR1cC5jb21cL1J1YnktT24tUmFpbHMtT2NlYW5p
         YS1NZWxib3VybmVcL2V2ZW50c1wvMjE5NTI1MjcxXC8iLCJkZXNjcmlwdGlv
         biI6IjxwPlB1bGwgdXAgYSBjaGFpciBhbmQgY29kZSB0byB5b3VyIGhlYXJ0
@@ -985,5 +985,5 @@ http_interactions:
         c1wvMlwvb3Blbl9ldmVudHMpLiIsIm1ldGhvZCI6IkV2ZW50cyIsImxhdCI6
         IiJ9fQo=
     http_version:
-  recorded_at: Sun, 15 Feb 2015 10:20:49 GMT
+  recorded_at: Mon, 16 Feb 2015 11:34:33 GMT
 recorded_with: VCR 2.9.3
