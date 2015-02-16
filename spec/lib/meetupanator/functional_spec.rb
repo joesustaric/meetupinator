@@ -2,6 +2,10 @@ require 'vcr_setup'
 require 'spec_helper'
 require 'meetupanator/cli'
 
+# Joe: I know I've written another functional test as well but,
+# i'll leave this one in here too.
+# Sometime it helps to write the output to disk especially for debugging.
+
 describe 'meetupanator' do
   # In an ideal world, we'd use FakeFS here.
   # Unfortunately, FakeFS and VCR don't coexist very well.

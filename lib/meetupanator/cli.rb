@@ -17,10 +17,14 @@ module Meetupanator
     desc 'getevents', 'Write all upcoming events for the given meetup
                        groups specified in INPUT to OUTPUT'
     map 'getevents' => 'run_app'
+    method_option :input, aliases: "-i",
+                  required: true, type: :string,
+                  :desc => "The location of the input file"
+    method_option :output, aliases: "-o",
+                  required: false, type: :string, default: 'output.csv',
+                  :desc => "The name of the file you want to output. (default is ./output.csv)"
 
-    option :input, aliases: '-i', required: true, type: :string
-    option :output, aliases: '-o', required: true, type: :string
-    option :week, aliases: '-w', required: false, type: :boolean
+    method_option :week, aliases: '-w', required: false, type: :boolean
 
     def run_app
       Meetupanator::App.run(options)
@@ -34,6 +38,6 @@ module Meetupanator
       puts Meetupanator::App.version
     end
 
-    default_task :getevents
+    default_task :run_app
   end
 end
