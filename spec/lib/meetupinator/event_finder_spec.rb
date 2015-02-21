@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'meetupanator/event_finder'
-require 'meetupanator/meetup_api'
+require 'meetupinator/event_finder'
+require 'meetupinator/meetup_api'
 
-describe Meetupanator::EventFinder do
+describe Meetupinator::EventFinder do
   describe '#extract_events' do
     let(:meetups) do
       {
@@ -15,7 +15,7 @@ describe Meetupanator::EventFinder do
     let(:events) { [:first_event, :another_event, :more_events, :final_event] }
     let(:events_in_week) { [:event_in_week] }
 
-    let(:api) { instance_double(Meetupanator::MeetupAPI) }
+    let(:api) { instance_double(Meetupinator::MeetupAPI) }
 
     before do
       allow(api).to receive(:get_meetup_id) { |name| meetups[name] }

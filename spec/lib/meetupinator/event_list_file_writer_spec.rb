@@ -1,8 +1,8 @@
 require 'fakefs/spec_helpers'
 require 'spec_helper'
-require 'meetupanator/event_list_file_writer'
+require 'meetupinator/event_list_file_writer'
 
-describe Meetupanator::EventListFileWriter do
+describe Meetupinator::EventListFileWriter do
   include FakeFS::SpecHelpers::All
 
   let(:file_name) { 'output.csv' }
@@ -37,13 +37,9 @@ describe Meetupanator::EventListFileWriter do
     File.delete(file_name) if File.exist?(file_name)
   end
 
-  before do
-    clean_up
-  end
+  before { clean_up }
 
-  after do
-    clean_up
-  end
+  after { clean_up }
 
   describe '#write' do
     it 'writes the events to file' do

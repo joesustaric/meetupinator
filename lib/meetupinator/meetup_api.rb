@@ -1,7 +1,7 @@
 require 'net/http'
 require 'json'
 
-module Meetupanator
+module Meetupinator
   # This class is responsible for communicating with the meetup.com API
   # and returning the json responses only.
   class MeetupAPI

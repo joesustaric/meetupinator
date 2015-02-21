@@ -1,7 +1,7 @@
 require 'thor'
-require 'meetupanator'
+require 'meetupinator'
 
-module Meetupanator
+module Meetupinator
   # class doco
   # rubocop:disable Metrics/LineLength
   class CLI < Thor
@@ -28,7 +28,7 @@ module Meetupanator
     method_option :week, aliases: '-w', required: false, type: :boolean
 
     def run_app
-      Meetupanator::App.run(options)
+      Meetupinator::App.run(options)
       puts "Output written to #{options[:output]}"
     end
 
@@ -36,7 +36,7 @@ module Meetupanator
     map '--version' => 'version'
     map '-v' => 'version'
     def version
-      puts Meetupanator::App.version
+      puts Meetupinator::App.version
     end
 
     default_task :run_app

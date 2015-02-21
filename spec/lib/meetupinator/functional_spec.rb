@@ -1,12 +1,12 @@
 require 'vcr_setup'
 require 'spec_helper'
-require 'meetupanator/cli'
+require 'meetupinator/cli'
 
 # Joe: I know I've written another functional test as well but,
 # i'll leave this one in here too.
 # Sometime it helps to write the output to disk especially for debugging.
 
-describe 'meetupanator' do
+describe 'meetupinator' do
   # In an ideal world, we'd use FakeFS here.
   # Unfortunately, FakeFS and VCR don't coexist very well.
   # Something like the solution proposed in https://github.com/vcr/vcr/issues/234 could work,
@@ -74,27 +74,27 @@ describe 'meetupanator' do
     it 'will fetch and save events for all meetups' do
       VCR.use_cassette('getevents_functional_test') do
         args = ['getevents', '-i', input_file, '-o', output_file, '-k', '1234']
-        expect { Meetupanator::CLI.start(args) }.to match_stdout("Output written to #{output_file}")
+        expect { Meetupinator::CLI.start(args) }.to match_stdout("Output written to #{output_file}")
         expect(read_output_file).to eq(expected_csv_output)
       end
     end
   end
 
   context 'when given the --version argument' do
-    before { stub_const('Meetupanator::VERSION', '9.23') }
+    before { stub_const('Meetupinator::VERSION', '9.23') }
 
     it 'returns the version' do
       args = ['--version']
-      expect { Meetupanator::CLI.start(args) }.to match_stdout('meetupanator v9.23')
+      expect { Meetupinator::CLI.start(args) }.to match_stdout('meetupinator v9.23')
     end
   end
 
   context 'when given the -v argument' do
-    before { stub_const('Meetupanator::VERSION', '9.23') }
+    before { stub_const('Meetupinator::VERSION', '9.23') }
 
     it 'returns the version' do
       args = ['-v']
-      expect { Meetupanator::CLI.start(args) }.to match_stdout('meetupanator v9.23')
+      expect { Meetupinator::CLI.start(args) }.to match_stdout('meetupinator v9.23')
     end
   end
 

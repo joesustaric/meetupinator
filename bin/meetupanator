@@ -1,5 +1,5 @@
 #! /usr/bin/env ruby
 
-require 'meetupanator/cli'
+require 'meetupinator/cli'
 
-Meetupanator::CLI.start(ARGV)
+meetupinator::CLI.start(ARGV)

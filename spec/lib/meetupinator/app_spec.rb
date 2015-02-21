@@ -1,8 +1,8 @@
 require 'fakefs/spec_helpers'
 require 'spec_helper'
-require 'meetupanator/app'
+require 'meetupinator/app'
 
-describe Meetupanator::App do
+describe Meetupinator::App do
   describe '#run' do
     let(:input_file) { 'input.txt' }
     let(:output_file) { 'output.csv' }
@@ -22,13 +22,13 @@ describe Meetupanator::App do
 
     context 'when input file / output file / api key / is specified' do
       it 'executes the program' do
-        expect(Meetupanator::MeetupAPI).to receive(:new).and_return(meetup_api)
-        expect(Meetupanator::InputFileReader).to receive(:group_names).with(input_file).and_return(group_names)
-        expect(Meetupanator::EventFinder).to receive(:new).and_return(event_finder)
-        expect(Meetupanator::EventListFileWriter).to receive(:new).and_return(file_writer)
+        expect(Meetupinator::MeetupAPI).to receive(:new).and_return(meetup_api)
+        expect(Meetupinator::InputFileReader).to receive(:group_names).with(input_file).and_return(group_names)
+        expect(Meetupinator::EventFinder).to receive(:new).and_return(event_finder)
+        expect(Meetupinator::EventListFileWriter).to receive(:new).and_return(file_writer)
         expect(event_finder).to receive(:extract_events).with(group_names, meetup_api, false).and_return(events)
         expect(file_writer).to receive(:write).with(events, output_file)
-        Meetupanator::App.run(args)
+        Meetupinator::App.run(args)
       end
     end
   end

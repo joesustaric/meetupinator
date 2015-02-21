@@ -1,4 +1,4 @@
-module Meetupanator
+module Meetupinator
   # class doco
   class InputFileReader
     def self.group_names(file_name)

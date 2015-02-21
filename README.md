@@ -1,28 +1,28 @@
-# Meetupanator
+# meetupinator
 This is just a meetup.com console app so far.
 Basically this is just a CLI tool to help you interface in a more automated way with meetup.
 Give it a list of meetup names you're interested in and then run it and it can tell you what the future meetups are.
 
-[![Build Status](https://travis-ci.org/joesustaric/meetupanator.svg?branch=master)](https://travis-ci.org/joesustaric/meetupanator)
-[![Gem Version](https://badge.fury.io/rb/meetupanator.svg)](http://badge.fury.io/rb/meetupanator)
+[![Build Status](https://travis-ci.org/joesustaric/meetupinator.svg?branch=master)](https://travis-ci.org/joesustaric/meetupinator)
+[![Gem Version](https://badge.fury.io/rb/meetupinator.svg)](http://badge.fury.io/rb/meetupinator)
 
 # What does it do atm?
 Reads in a list of meetups from a file and writes a csv of all the ones that have future events.
 
 # Usage
 ```
-$ meetupanator getevents -i /location/of/input.txt -o /location/of/output.csv
+$ meetupinator getevents -i /location/of/input.txt -o /location/of/output.csv
 ```
 or  
 ```
-$ meetupanator getevents -i /location/of/input.txt
+$ meetupinator getevents -i /location/of/input.txt
 ```
 This will write a otuput.csv to the current directory.
 
 ## During development
 
 ```
-$ ruby -Ilib ./bin/meetupanator ...
+$ ruby -Ilib ./bin/meetupinator ...
 ```
 
 # todo

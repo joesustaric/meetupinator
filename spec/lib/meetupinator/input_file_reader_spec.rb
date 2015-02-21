@@ -1,8 +1,8 @@
 require 'fakefs/spec_helpers'
 require 'spec_helper'
-require 'meetupanator/input_file_reader'
+require 'meetupinator/input_file_reader'
 
-describe Meetupanator::InputFileReader do
+describe Meetupinator::InputFileReader do
   include FakeFS::SpecHelpers::All
 
   let(:input_file_dir) { '/tmp/input/file/location' }
@@ -18,6 +18,6 @@ describe Meetupanator::InputFileReader do
   end
 
   describe '#group_names' do
-    it { expect(Meetupanator::InputFileReader.group_names(file_name)).to eq(group_names) }
+    it { expect(Meetupinator::InputFileReader.group_names(file_name)).to eq(group_names) }
   end
 end

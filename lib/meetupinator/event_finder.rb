@@ -1,4 +1,4 @@
-module Meetupanator
+module Meetupinator
   # class def
   class EventFinder
     def extract_events(group_url_names, api, week)

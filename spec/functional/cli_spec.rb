@@ -1,11 +1,11 @@
 require 'spec_helper'
 require 'vcr_setup'
-require 'meetupanator/cli'
+require 'meetupinator/cli'
 
 # I wanted to execute these tests by running the exe file
 # but it won't engage the vcr gem because I think it might
 # spawn a new process? (I think)
-describe 'The meetupanator command line interface' do
+describe 'The meetupinator command line interface' do
   let(:meetups) { ['MelbNodeJS', 'Ruby-On-Rails-Oceania-Melbourne'] }
 
   before do
@@ -27,7 +27,7 @@ describe 'The meetupanator command line interface' do
   context 'meetup api and input file specified' do
     it 'generates the correct output.csv in the working dir' do
       VCR.use_cassette('functional') do
-        Meetupanator::CLI.start(['-i', 'input.txt', '-k', '1234'])
+        Meetupinator::CLI.start(['-i', 'input.txt', '-k', '1234'])
       end
       expect(CSV.read('output.csv')).to eq(CSV.read('../spec/fixtures/functional.csv'))
     end
