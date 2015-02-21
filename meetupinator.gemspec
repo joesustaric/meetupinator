@@ -10,10 +10,11 @@ Gem::Specification.new do |s|
   s.summary = "Tool to generate weekly meetup emails"
   s.description = "Tool to generate weekly meetup emails using the Meetup API"
   s.authors = ["Joe Sustaric", "John Fulton", "Charles Korn"]
+  s.email = 'joe8307@gmail.com'
   s.files = Dir['lib/   *.rb'] + Dir['bin/*'] + ['README.md']
   s.test_files = Dir['spec/*']
   s.homepage = 'https://github.com/joesustaric/meetupinator'
-  # s.license       = '???'
+  s.license       = 'MIT'
   s.executables = ['meetupinator']
 
   s.add_development_dependency 'rspec', '~> 3.2'
