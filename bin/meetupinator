@@ -2,4 +2,4 @@
 
 require 'meetupinator/cli'
 
-meetupinator::CLI.start(ARGV)
+Meetupinator::CLI.start(ARGV)
