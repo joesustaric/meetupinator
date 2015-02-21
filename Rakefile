@@ -22,5 +22,5 @@ end
 
 desc 'Publish the gem to rubygems.org'
 task :publish => :build do
-  system "gem push meetupinator-#{meetupinator::VERSION}.gem"
+  system "gem push meetupinator-#{Meetupinator::VERSION}.gem"
 end

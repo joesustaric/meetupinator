@@ -15,7 +15,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/*']
   s.homepage = 'https://github.com/joesustaric/meetupinator'
   s.license       = 'MIT'
-  s.executables = ['meetupinator']
+  s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  s.require_paths = ["lib"]
 
   s.add_development_dependency 'rspec', '~> 3.2'
   s.add_development_dependency 'pry', '~> 0.10'
