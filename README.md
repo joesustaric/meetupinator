@@ -30,11 +30,5 @@ $ bundle exec ./bin/meetupinator ...
 - [ ] - provide options for date range
 - [x] - Gem this
 
-##Spec Notes
-- Using VCR gem, will call API when tests are run first time.
-- Export MEETUP_API_KEY into your environment
-- Times from the api are milliseconds since epoch
-
-
 # Licence
-some open source one. not sure yet.
+[MIT](https://github.com/joesustaric/meetupinator/blob/master/LICENSE.md)
