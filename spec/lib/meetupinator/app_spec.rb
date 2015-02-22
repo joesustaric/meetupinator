@@ -28,7 +28,7 @@ describe Meetupinator::App do
         expect(Meetupinator::EventListFileWriter).to receive(:new).and_return(file_writer)
         expect(event_finder).to receive(:extract_events).with(group_names, meetup_api, 1).and_return(events)
         expect(file_writer).to receive(:write).with(events, output_file)
-        Meetupinator::App.run(args)
+        Meetupinator::App.retrieve_events(args)
       end
     end
   end

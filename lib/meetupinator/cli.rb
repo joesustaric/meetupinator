@@ -17,18 +17,18 @@ module Meetupinator
 
     desc 'getevents', 'Write all upcoming events for the given meetup
                        groups specified in INPUT to OUTPUT'
-    map 'getevents' => 'run_app'
+    map 'getevents' => 'retrieve_events'
     method_option :input, aliases: '-i', required: true, type: :string,
                           desc: 'The location of the input file'
     method_option :output,
                   aliases: '-o', required: false, type: :string,
                   default: 'output.csv',
                   desc: 'The name of the file you want to output. (default is ./output.csv)'
-
-    method_option :weeks, aliases: '-w', required: false, type: :numeric
-
-    def run_app
-      Meetupinator::App.run(options)
+    method_option :weeks,
+                  aliases: '-w', required: false, type: :numeric,
+                  desc: 'Number of weeks to retrieve events for.'
+    def retrieve_events
+      Meetupinator::App.retrieve_events(options)
       puts "Output written to #{options[:output]}"
     end
 
@@ -39,7 +39,7 @@ module Meetupinator
       puts Meetupinator::App.version
     end
 
-    default_task :run_app
+    default_task :retrieve_events
   end
 end
 # rubocop:enable Metrics/LineLength

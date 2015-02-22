@@ -5,11 +5,11 @@ module Meetupinator
       'meetupinator v' + Meetupinator::VERSION
     end
 
-    def self.run(args = {})
-      new.run(args)
+    def self.retrieve_events(args = {})
+      new.retrieve_events(args)
     end
 
-    def run(args)
+    def retrieve_events(args)
       init(args)
       events = @event_finder.extract_events(@group_names, @api, args[:weeks])
       @event_list_file_writer.write events, args[:output]
