@@ -22,7 +22,7 @@ This will write a otuput.csv to the current directory.
 ## During development
 
 ```
-$ ruby -Ilib ./bin/meetupinator ...
+$ bundle exec ./bin/meetupinator ...
 ```
 
 # todo
