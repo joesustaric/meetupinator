@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.description = "Tool to generate weekly meetup emails using the Meetup API"
   s.authors = ["Joe Sustaric", "John Fulton", "Charles Korn"]
   s.email = 'joe8307@gmail.com'
-  s.files = Dir['lib/   *.rb'] + Dir['bin/*'] + ['README.md']
-  s.test_files = Dir['spec/*']
+  s.files = Dir['lib/**/*'] + Dir['bin/*'] + ['README.md']
+  s.test_files = Dir['spec/**/*']
   s.homepage = 'https://github.com/joesustaric/meetupinator'
   s.license       = 'MIT'
   s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
