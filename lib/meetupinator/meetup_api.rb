@@ -11,11 +11,7 @@ module Meetupinator
       @base_uri = 'api.meetup.com'
       @groups_endpoint = '/2/groups'
       @events_endpoint = '/2/events'
-      if key_valid?(api_key) || key_found_in_env?
-        @api_key = retreive_key api_key
-      else
-        fail('no MEETUP_API_KEY provided')
-      end
+      @api_key = pick_which_api_key(api_key)
     end
 
     def get_meetup_id(group_url_name)
@@ -57,17 +53,26 @@ module Meetupinator
       response['results']
     end
 
-    def retreive_key(api_key)
-      return api_key if key_valid? api_key
-      return ENV['MEETUP_API_KEY'] if key_found_in_env?
+    def pick_which_api_key(api_key)
+      key = api_key if key_valid?(api_key)
+      key = ENV['MEETUP_API_KEY'] if key_found_in_env? && key_invalid?(key)
+      key_invalid?(key) ? fail('no MEETUP_API_KEY provided') : key
     end
 
     def key_valid?(api_key)
       !(api_key.nil? || api_key.empty?)
     end
 
+    def key_invalid?(api_key)
+      !key_valid?(api_key)
+    end
+
+    def key_not_found_in_env?
+      !key_found_in_env?
+    end
+
     def key_found_in_env?
-      !(ENV['MEETUP_API_KEY'].nil? || ENV['MEETUP_API_KEY'].empty?)
+      (!ENV['MEETUP_API_KEY'].nil? && !ENV['MEETUP_API_KEY'].empty?)
     end
   end
 end
