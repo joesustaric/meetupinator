@@ -37,12 +37,16 @@ module Meetupinator
 
     def get_meetup_response(uri)
       response = Net::HTTP.get_response uri
+      fail_if_not_ok(response)
+      JSON.parse response.body
+    end
+
+    def fail_if_not_ok(response)
       if response.code != '200'
         msg = "Call to #{uri} failed: #{response.code} - #{response.message}"
         msg << '. ' + response.body if response.class.body_permitted?
         fail(msg)
       end
-      JSON.parse response.body
     end
 
     def extract_meetup_id(response)
