@@ -2,11 +2,35 @@ require 'spec_helper'
 require 'vcr_setup'
 require 'meetupinator/meetup_api'
 
+# Query - Return something / change nothing
+# Command - Return nothing / change something
+# Test the interface not the implementation.
+# eg
+# Incoming Query Message --> [Test Object].return_balance
+# Test incoming query messages, by making assertions about what they send back.
+
+# Incoming Command Message --> [Test Object].set_something(y)
+# Test incoming command messages by making assertions about the
+# direct public side effects.
+
+# Do not test private method calls, do not make assertions about their result.
+# Don't expect to send/call them.
+# (Break rule if it saves $$ during development)
+
+# Do not test outgoing query messages.
+# Do not make assertions about their result
+# Do not expect them to send.
+
+# If a message has no visible side effects the sender should not test it.
+
+# Expect to send outgoing command messages.
+# Break rule if side effects are stable and cheap.
+
 describe Meetupinator::MeetupAPI do
   let(:group_id) { 980_007_2 }
   let(:env_api_key) { '1234' } # this key is coupled to the vcr tests
 
-  describe '#new' do
+  describe '#new' do # Command
     context 'when there is no Meetup API key in the environment' do
       before { ENV['MEETUP_API_KEY'] = nil }
 
@@ -37,7 +61,7 @@ describe Meetupinator::MeetupAPI do
     end
   end
 
-  describe '#get_meetup_id' do
+  describe '#get_meetup_id' do # Query
     context 'when there is a Meetup API key in the environment' do
       before { ENV['MEETUP_API_KEY'] = env_api_key }
       after { ENV['MEETUP_API_KEY'] = nil }
@@ -52,7 +76,7 @@ describe Meetupinator::MeetupAPI do
     end
   end
 
-  describe '#get_upcoming_events' do
+  describe '#get_upcoming_events' do # Query
     context 'when there is a Meetup API key in the environment' do
       before { ENV['MEETUP_API_KEY'] = env_api_key }
       after { ENV['MEETUP_API_KEY'] = nil }

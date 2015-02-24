@@ -42,11 +42,10 @@ module Meetupinator
     end
 
     def fail_if_not_ok(response)
-      if response.code != '200'
-        msg = "Call to #{uri} failed: #{response.code} - #{response.message}"
-        msg << '. ' + response.body if response.class.body_permitted?
-        fail(msg)
-      end
+      return unless response.code != '200'
+      msg = "Call to #{uri} failed: #{response.code} - #{response.message}"
+      msg << '. ' + response.body if response.class.body_permitted?
+      fail(msg)
     end
 
     def extract_meetup_id(response)
