@@ -25,7 +25,7 @@ module Meetupinator
                   default: 'output.csv',
                   desc: 'The name of the file you want to output. (default is ./output.csv)'
 
-    method_option :week, aliases: '-w', required: false, type: :boolean
+    method_option :weeks, aliases: '-w', required: false, type: :boolean
 
     def run_app
       Meetupinator::App.run(options)

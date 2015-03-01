@@ -11,7 +11,7 @@ module Meetupinator
 
     def run(args)
       init(args)
-      events = @event_finder.extract_events(@group_names, @api, args[:week])
+      events = @event_finder.extract_events(@group_names, @api, args[:weeks])
       @event_list_file_writer.write events, args[:output]
     end
 

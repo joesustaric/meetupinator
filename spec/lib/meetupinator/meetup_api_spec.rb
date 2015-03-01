@@ -92,7 +92,7 @@ describe Meetupinator::MeetupAPI do
 
         it 'returns all the upcoming events for the next week' do
           VCR.use_cassette('events_next_week') do
-            expect(subject.get_upcoming_events([group_id], true).size).to eq(1)
+            expect(subject.get_upcoming_events([group_id], 1).size).to eq(1)
           end
         end
       end

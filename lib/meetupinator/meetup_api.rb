@@ -21,11 +21,11 @@ module Meetupinator
       extract_meetup_id get_meetup_response(uri)
     end
 
-    def get_upcoming_events(group_ids, week)
+    def get_upcoming_events(group_ids, weeks)
       query_string = 'sign=true&photo-host=public&status=upcoming&key=' +
                      @api_key + '&group_id=' + group_ids.join(',')
 
-      query_string << '&time=,1w' if week
+      query_string << "&time=,#{weeks}w" if weeks
 
       uri = URI::HTTP.build(host: @base_uri, path: @events_endpoint,
                             query: query_string)
