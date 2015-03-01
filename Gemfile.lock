@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    meetupinator (0.6.1)
+    meetupinator (0.6.2)
       thor (~> 0.19)
 
 GEM
