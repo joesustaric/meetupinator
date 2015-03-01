@@ -10,13 +10,19 @@ Give it a list of meetup names you're interested in and then run it and it can t
 Reads in a list of meetups from a file and writes a csv of all the ones that have future events.
 
 # Usage
+You must specify a input file and key or have your key in your ENV as MEETUP_API_KEY
 ```
-$ meetupinator getevents -i /location/of/input.txt -o /location/of/output.csv
+$ meetupinator -i /location/of/input.txt -o /location/of/output.csv -k your_api_key_1234abcd -w 1
 ```
-or  
+or this will get all the up and coming events
 ```
-$ meetupinator getevents -i /location/of/input.txt
+$ meetupinator  -i /location/of/input.txt
 ```
+or for two weeks worth of events  
+```
+$ meetupinator  -i /location/of/input.txt -w 2
+```
+
 This will write a otuput.csv to the current directory.
 
 ## During development
@@ -24,11 +30,6 @@ This will write a otuput.csv to the current directory.
 ```
 $ bundle exec ./bin/meetupinator ...
 ```
-
-# todo
-- [x] - given a file input and an output dir write a file
-- [ ] - provide options for date range
-- [x] - Gem this
 
 # Licence
 [MIT](https://github.com/joesustaric/meetupinator/blob/master/LICENSE.md)
