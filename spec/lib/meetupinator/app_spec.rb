@@ -3,12 +3,12 @@ require 'spec_helper'
 require 'meetupinator/app'
 
 describe Meetupinator::App do
-  describe '#run' do
+  describe '#retrieve_events' do
     let(:input_file) { 'input.txt' }
     let(:output_file) { 'output.csv' }
-    let(:event_finder) { double('event finder') }
-    let(:file_writer) { double('file writer') }
-    let(:meetup_api) { double('meetup api') }
+    let(:event_finder) { instance_double(Meetupinator::EventFinder) }
+    let(:file_writer) { instance_double(Meetupinator::EventListFileWriter) }
+    let(:meetup_api) { instance_double(Meetupinator::MeetupAPI) }
     let(:group_names) { ['First meetup group', 'Second meetup group'] }
     let(:events) { double('events') }
     let(:args) do
