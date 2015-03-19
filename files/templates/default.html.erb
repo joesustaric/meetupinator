@@ -6,8 +6,7 @@
   first_meetup = sorted_events.first
   first_day = first_meetup[:date]
   start_of_week = get_start_of_week(first_day)
-      
-  days = (0..4).map { |d| start_of_week + d*DAY }
+  days = days_list(start_of_week, 5)
 %>
 <% for day in days %>
   <h1><%= day.strftime('%A %-d/%m/%Y') %></h1>

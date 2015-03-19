@@ -39,4 +39,10 @@ describe Meetupinator::TemplateContext do
       expect(subject.sorted_events.map { |e| e[:event_name] }).to eq(['Event B', 'Event C', 'Event A'])
     end
   end
+
+  describe '#days_list' do
+    it 'returns a list of days starting with the day given' do
+      expect(subject.days_list(Time.new(2015, 3, 19), 3)).to eq([Time.new(2015, 3, 19), Time.new(2015, 3, 20), Time.new(2015, 3, 21)])
+    end
+  end
 end

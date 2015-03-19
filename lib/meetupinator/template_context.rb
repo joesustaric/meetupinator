@@ -19,8 +19,18 @@ module Meetupinator
       events.sort { |a, b| a[:start_time] <=> b[:start_time] }
     end
 
+    def days_list(start_date, n)
+      (0..(n - 1)).map { |d| add_days(start_date, d) }
+    end
+
     def template_binding
       binding
+    end
+
+    private
+
+    def add_days(date, n)
+      date + n * DAY
     end
   end
 end
