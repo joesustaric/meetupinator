@@ -1,3 +1,5 @@
+require 'erb'
+
 module Meetupinator
   # Creates a nicely-formatted version of a list of events.
   class Formatter
