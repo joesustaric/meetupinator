@@ -9,18 +9,5 @@ module Meetupinator
       FileUtils.mkdir_p(File.dirname(output_file))
       File.write(output_file, output)
     end
-
-    # Object passed to templates.
-    class TemplateParameters
-      attr_reader :events
-
-      def initialize(events)
-        @events = events
-      end
-
-      def template_binding
-        binding
-      end
-    end
   end
 end

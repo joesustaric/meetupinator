@@ -3,17 +3,7 @@
 </head>
 <body>
 <% 
-  # FIXME This will probably break for daylight savings and is generally awful
-   
-  DAY = 60*60*24
-   
-  def get_start_of_week(d)
-    while !d.monday?
-      d = d - DAY
-    end
-    
-    d
-  end
+  # FIXME This is generally awful
    
   sorted_events = events.sort { |a, b| a[:start_time] <=> b[:start_time] }
   first_meetup = sorted_events.first()
