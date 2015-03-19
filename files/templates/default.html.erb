@@ -4,9 +4,8 @@
 <body>
 <% 
   # FIXME This is generally awful
-   
-  sorted_events = events.sort { |a, b| a[:start_time] <=> b[:start_time] }
-  first_meetup = sorted_events.first()
+  
+  first_meetup = sorted_events.first
   first_day = first_meetup[:date]
   start_of_week = get_start_of_week(first_day)
       

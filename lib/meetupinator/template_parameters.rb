@@ -15,6 +15,10 @@ module Meetupinator
       d
     end
 
+    def sorted_events
+      events.sort { |a, b| a[:start_time] <=> b[:start_time] }
+    end
+
     def template_binding
       binding
     end
