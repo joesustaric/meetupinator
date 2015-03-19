@@ -1,0 +1,66 @@
+<html>
+<head>
+    <style>
+      body {
+        font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin-top: 25px;
+        margin-bottom: 5px;
+      }
+
+      .time {
+        float: left;
+      }
+
+      .time-group {
+        margin-left: 80px;
+      }
+
+      .event-name {
+        margin-bottom: 0;
+      }
+
+      .meetup {
+        color: #707070;
+        margin-bottom: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
+</head>
+<body>
+<% 
+  first_meetup = sorted_events.first
+  first_day = first_meetup[:date]
+  start_of_week = get_start_of_week(first_day)
+  days = days_list(start_of_week, 5)
+%>
+<% for day in days %>
+  <h1><%= day.strftime('%A %-d/%m/%Y') %></h1>
+  
+  <% day_events = sorted_events.select { |event| event[:date] == day } %>
+    
+  <% if day_events.empty? %>
+    <div>(none)</div>
+  <% else %>
+    <% day_events.group_by { |event| event[:start_time] }.each do |time, time_events| %>
+      <div class="time"><%= time.strftime('%-l:%M %P') %></div>
+      <div class="time-group">
+        <% for event in time_events %>
+          <div class="meetup">
+              <div class="event-name"><a href="<%= event[:event_url] %>"><%= event[:event_name] %></a></div>
+              <div><%= event[:group_name] %></div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+</body>
+</html>

@@ -1,4 +1,4 @@
 # Module Comment
 module Meetupinator
-  VERSION = '0.6.2'
+  VERSION = '0.7'
 end

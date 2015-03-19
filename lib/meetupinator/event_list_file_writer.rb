@@ -4,6 +4,8 @@ module Meetupinator
   # class def
   class EventListFileWriter
     def write(events, file_name)
+      FileUtils.mkdir_p(File.dirname(file_name))
+
       CSV.open(file_name, 'wb') do |csv|
         csv << ['Group name', 'Event name', 'Day of week', 'Date',
                 'Start time', 'End time', 'Event URL']
