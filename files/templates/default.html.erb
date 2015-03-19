@@ -1,0 +1,43 @@
+<html>
+<head>
+</head>
+<body>
+<% 
+  # FIXME This will probably break for daylight savings and is generally awful
+   
+  DAY = 60*60*24
+   
+  def get_start_of_week(d)
+    while !d.monday?
+      d = d - DAY
+    end
+    
+    d
+  end
+   
+  sorted_events = events.sort { |a, b| a[:start_time] <=> b[:start_time] }
+  first_meetup = sorted_events.first()
+  first_day = first_meetup[:date]
+  start_of_week = get_start_of_week(first_day)
+      
+  days = (0..4).map { |d| start_of_week + d*DAY }
+%>
+<% for day in days %>
+  <h1><%= day.strftime('%A %-d/%m/%Y') %></h1>
+  <% day_events = sorted_events.select { |event| event[:date] == day } %>
+  <% if day_events.empty? %>
+    <p>(none)</p>
+  <% else %>
+    <% day_events.group_by { |event| event[:start_time] }.each do |time, time_events| %>
+      <h2><%= time.strftime('%-l:%M %P') %></h2>
+      <% for event in time_events %>
+        <div class="meetup">
+            <h3><a href="<%= event[:event_url] %>"><%= event[:event_name] %></a></h3>
+            <div><%= event[:group_name] %></div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+</body>
+</html>
