@@ -3,7 +3,7 @@ module Meetupinator
   class Formatter
     def format(events, template_file, output_file)
       template_engine = ERB.new(File.read(template_file))
-      parameters = TemplateParameters.new(events)
+      parameters = TemplateContext.new(events)
       output = template_engine.result(parameters.template_binding)
 
       FileUtils.mkdir_p(File.dirname(output_file))

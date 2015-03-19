@@ -2,7 +2,7 @@ require 'fakefs/spec_helpers'
 require 'spec_helper'
 require 'meetupinator/formatter'
 
-describe Meetupinator::TemplateParameters do
+describe Meetupinator::TemplateContext do
   let(:events) do
     [
       {
@@ -21,7 +21,7 @@ describe Meetupinator::TemplateParameters do
   end
 
   subject do
-    Meetupinator::TemplateParameters.new(events)
+    Meetupinator::TemplateContext.new(events)
   end
 
   describe '#get_start_of_week' do

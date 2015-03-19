@@ -1,6 +1,6 @@
 module Meetupinator
   # Object passed to templates during formatting.
-  class TemplateParameters
+  class TemplateContext
     attr_reader :events
 
     DAY = 60 * 60 * 24

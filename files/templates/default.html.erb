@@ -3,8 +3,6 @@
 </head>
 <body>
 <% 
-  # FIXME This is generally awful
-  
   first_meetup = sorted_events.first
   first_day = first_meetup[:date]
   start_of_week = get_start_of_week(first_day)
@@ -13,7 +11,9 @@
 %>
 <% for day in days %>
   <h1><%= day.strftime('%A %-d/%m/%Y') %></h1>
+  
   <% day_events = sorted_events.select { |event| event[:date] == day } %>
+    
   <% if day_events.empty? %>
     <p>(none)</p>
   <% else %>
