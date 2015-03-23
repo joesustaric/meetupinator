@@ -7,9 +7,11 @@ Give it a list of meetup names you're interested in and then run it and it can t
 [![Gem Version](https://badge.fury.io/rb/meetupinator.svg)](http://badge.fury.io/rb/meetupinator)
 
 # What does it do atm?
-Reads in a list of meetups from a file and writes a csv of all the ones that have future events.
+* Reads in a list of meetups from a file and writes a csv of all the ones that have future events.
+* Reads in a list of meetups from a CSV file and uses an ERB template to format that list nicely.
 
 # Usage
+## Retrieving events
 You must specify a input file and key or have your key in your ENV as MEETUP_API_KEY
 ```
 $ meetupinator -i /location/of/input.txt -o /location/of/output.csv -k your_api_key_1234abcd -w 1
@@ -24,6 +26,17 @@ $ meetupinator  -i /location/of/input.txt -w 2
 ```
 
 This will write a otuput.csv to the current directory.
+
+## Formatting
+```
+$ meetupinator format -i /location/of/input.csv -o /location/of/output.whatever -t /location/of/template.whatever.erb
+```
+
+or, to use the default output location (output.html) and default template:
+
+```
+$ meetupinator format -i /location/of/input.csv -o /location/of/output.whatever -t /location/of/template.whatever.erb
+```
 
 ## During development
 

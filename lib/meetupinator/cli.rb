@@ -30,15 +30,17 @@ module Meetupinator
       puts "Output written to #{options[:output]}"
     end
 
-    desc 'format', 'Write a formatted version of the events listed in INPUT to OUTPUT using TEMPLATE to describe the desired output format.'
+    desc 'format', 'Write a formatted version of the events listed in INPUT to a file using a template to specify the desired output format.'
     method_option :input,
                   aliases: '-i', required: true, type: :string,
                   desc: 'The location of the input CSV file.'
     method_option :output,
-                  aliases: '-o', required: true, type: :string,
+                  aliases: '-o', required: false, type: :string,
+                  default: 'output.html',
                   desc: 'The name of the file you want to output.'
     method_option :template,
-                  aliases: '-t', required: true, type: :string,
+                  aliases: '-t', required: false, type: :string,
+                  default: File.expand_path("#{File.dirname(__FILE__)}/../../files/templates/default.html.erb"),
                   desc: 'The name of the template file.'
     def format
       Meetupinator::App.format(options)
