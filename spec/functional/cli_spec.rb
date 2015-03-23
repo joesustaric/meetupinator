@@ -56,5 +56,12 @@ describe 'The meetupinator command line interface' do
       expected_output = prepare_html_for_comparison(IO.read('../spec/fixtures/formatOutput.html'))
       expect(output).to eq(expected_output)
     end
+
+    it 'generates the correct output in the default location using the default template' do
+      Meetupinator::CLI.start(['format', '-i', '../spec/fixtures/formatInput.csv'])
+      output = prepare_html_for_comparison(IO.read('output.html'))
+      expected_output = prepare_html_for_comparison(IO.read('../spec/fixtures/formatOutput.html'))
+      expect(output).to eq(expected_output)
+    end
   end
 end
