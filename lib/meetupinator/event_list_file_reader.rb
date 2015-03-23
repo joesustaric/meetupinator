@@ -1,3 +1,5 @@
+require 'time'
+
 module Meetupinator
   # Reads a list of events from a CSV file.
   class EventListFileReader
