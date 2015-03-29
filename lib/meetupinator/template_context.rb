@@ -27,8 +27,7 @@ module Meetupinator
       binding
     end
 
-    private
-
+    # FIXME: This will probably break for daylight savings
     def add_days(date, n)
       date + n * DAY
     end

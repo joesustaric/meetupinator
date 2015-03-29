@@ -42,10 +42,13 @@
 <% 
   first_meetup = sorted_events.first
   first_day = first_meetup[:date]
-  start_of_week = get_start_of_week(first_day)
-  days = days_list(start_of_week, 5)
+  start_of_first_week = get_start_of_week(first_day)
+  days_in_first_week = days_list(start_of_first_week, 5)
+
+  days_in_second_week = days_list(add_days(start_of_first_week, 7), 5)
+  events_in_second_week = sorted_events.select { |event| days_in_second_week.include?(event[:date]) }
 %>
-<% for day in days %>
+<% for day in days_in_first_week %>
   <h1><%= day.strftime('%A %-d/%m/%Y') %></h1>
   
   <% day_events = sorted_events.select { |event| event[:date] == day } %>
@@ -66,5 +69,18 @@
     <% end %>
   <% end %>
 <% end %>
+
+<h1>Next Week Sneak Peek</h1>
+<div>
+    <% if events_in_second_week.empty? %>
+      <div>(none)</div>
+    <% else %>
+      <% events_in_second_week.each do |event| %>
+        <a href="<%= event[:event_url] %>"><%= event[:group_name] %></a>
+        <% if event != events_in_second_week.last %>/<% end %>
+      <% end %>
+    <% end %>
+</div>
+
 </body>
 </html>
