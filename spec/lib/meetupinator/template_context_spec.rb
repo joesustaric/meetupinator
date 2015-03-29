@@ -45,4 +45,18 @@ describe Meetupinator::TemplateContext do
       expect(subject.days_list(Time.new(2015, 3, 19), 3)).to eq([Time.new(2015, 3, 19), Time.new(2015, 3, 20), Time.new(2015, 3, 21)])
     end
   end
+
+  describe '#add_days' do
+    it 'returns the given date if adding no days' do
+      expect(subject.add_days(Time.new(2015, 3, 19), 0)).to eq(Time.new(2015, 3, 19))
+    end
+
+    it 'returns the next day if adding one day' do
+      expect(subject.add_days(Time.new(2015, 3, 19), 1)).to eq(Time.new(2015, 3, 20))
+    end
+
+    it 'returns the day after next if adding two days' do
+      expect(subject.add_days(Time.new(2015, 3, 19), 2)).to eq(Time.new(2015, 3, 21))
+    end
+  end
 end
